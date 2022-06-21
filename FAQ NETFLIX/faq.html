@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Frequently Asked Questions</title>
+</head>
+
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1>
+    </header>
+
+    <div class="w3-container">
+
+        <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-black w3-left-align">What is
+            Netflix?</button>
+        <div id="Demo1" class="w3-hide w3-container">
+            <p>Netflix is a subscribing based service which offers you the best of movies and tv series.</p>
+        </div>
+
+        <script>
+            function myFunction(id) {
+                var x = document.getElementById(id);
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                    x.previousElementSibling.className =
+                        x.previousElementSibling.className.replace("w3-black", "w3-red");
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                    x.previousElementSibling.className =
+                        x.previousElementSibling.className.replace("w3-red", "w3-black");
+                }
+            }
+        </script>
+
+</body>
+
+</html>
