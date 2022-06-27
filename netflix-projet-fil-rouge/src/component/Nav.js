@@ -6,6 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
+
 function Nav() {
     const [navBlack, setNavBlack] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -28,7 +29,7 @@ function Nav() {
             <button className='nav__burger' onClick={handleClick}>
                 <MenuIcon />
             </button>
-            <img src='./img/logo.png' className='nav__logo' alt='Netflix' />
+            <img src='./img/logo.png' className='nav__logo' alt='Netflix' href='/'/>
             <nav className="nav__links">
                 <a href='/' className='nav__link'>
                     Accueil
