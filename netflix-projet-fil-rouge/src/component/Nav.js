@@ -29,7 +29,7 @@ function Nav() {
             <button className='nav__burger' onClick={handleClick}>
                 <MenuIcon />
             </button>
-            <img src='./img/logo.png' className='nav__logo' alt='Netflix' href='/'/>
+            <img src='./img/logo.png' className='nav__logo' alt='Netflix'/>
             <nav className="nav__links">
                 <a href='/' className='nav__link'>
                     Accueil
