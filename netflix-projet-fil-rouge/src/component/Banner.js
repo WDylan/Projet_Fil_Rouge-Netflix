@@ -32,7 +32,7 @@ function Banner() {
     const backgroundStyle = {
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
         backgroundSize: "cover",
-        bakcgroundPosition:"center center",
+        bakcgroundPosition: "center center",
     };
 
 
@@ -40,7 +40,7 @@ function Banner() {
         <header className='banner' style={backgroundStyle}>
             <div className='banner__content'>
                 <h1 className='banner__title'>
-                    {movie?.title || movie?.original_title}
+                    {movie?.title || movie?.name || movie?.original_title}
                 </h1>
                 <p className='banner__description'>
                     {movie?.overview || cacheText(movie?.overview, 100)}
@@ -52,7 +52,6 @@ function Banner() {
                     <button className='banner__button'>
                         <HelpOutlineIcon /> Plus d'infos</button>
                 </div>
-
             </div>
         </header>
     )

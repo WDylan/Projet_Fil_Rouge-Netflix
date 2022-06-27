@@ -1,0 +1,19 @@
+.row {
+    color: white;
+    padding: 1rem 4%;
+
+    &__title {
+        font-size: 1.7rem;
+    }
+    &__images {
+        display: flex;
+        align-items: center;
+        overflow-x: visible;
+        overflow-y: hidden;
+        width: 100%;
+        padding: 5rem 0;
+        .row__image {
+
+        }
+    }
+}
