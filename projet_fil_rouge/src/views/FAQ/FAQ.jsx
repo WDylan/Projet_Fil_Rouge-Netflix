@@ -3,13 +3,16 @@ import './FAQ.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap";
 import AddIcon from '@mui/icons-material/Add';
+import NavBar from '../../components/NavBarComponent/NavBar';
 
 const FAQ = () => {
     return (
+
         <div className='container-fluid'>
             <div className='title'>
                 <h1>Frequently asked questions</h1>
             </div>
+
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item" id="backgroundColor">
                     <h2 class="accordion-header" id="flush-headingOne">
@@ -18,8 +21,10 @@ const FAQ = () => {
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Netflix est un service de streaming qui propose une vaste sélection de séries TV, films, animes, documentaires et autres programmes primés sur des milliers d'appareils connectés à Internet.
-                            Regardez tout ce que vous voulez, quand vous voulez, sans publicité et à un tarif mensuel très attractif. Découvrez de nouveaux films et séries TV chaque semaine, il y en a pour tous les goûts !</div>
+                        <div class="accordion-body">
+                            <p>Netflix est un service de streaming qui propose une vaste sélection de séries TV, films, animes, documentaires et autres programmes primés sur des milliers d'appareils connectés à Internet.</p><br />
+                            <p>Regardez tout ce que vous voulez, quand vous voulez, sans publicité et à un tarif mensuel très attractif. Découvrez de nouveaux films et séries TV chaque semaine, il y en a pour tous les goûts !</p>
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-item">

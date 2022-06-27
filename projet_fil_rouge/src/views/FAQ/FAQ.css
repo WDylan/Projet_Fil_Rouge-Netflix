@@ -3,47 +3,64 @@
   height: 100%;
   width: 100%;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 0.5;
+  position: absolute;
 }
 
 .title {
+  display: flex;
+  flex: inline;
   color: white;
 }
 
 #backgroundColor {
-  background-color: rgb(30,30,30);
+  background-color: rgb(30, 30, 30);
 }
 
 #flush-collapseOne {
-  background-color: rgb(30,30,30);
+  background-color: rgb(30, 30, 30);
   color: white;
 }
+
 #flush-collapseTwo {
-  background-color: rgb(30,30,30);
+  background-color: rgb(30, 30, 30);
   color: white;
 }
+
 #flush-collapseThree {
-  background-color: rgb(30,30,30);
+  background-color: rgb(30, 30, 30);
   color: white;
 }
+
 #flush-collapseFour {
-  background-color: rgb(30,30,30);
+  background-color: rgb(30, 30, 30);
   color: white;
 }
+
 #flush-collapseFive {
-  background-color: rgb(30,30,30);
+  background-color: rgb(30, 30, 30);
   color: white;
 }
+
 #flush-collapseSix {
-  background-color: rgb(30,30,30);
+  background-color: rgb(30, 30, 30);
   color: white;
 }
 
-.titleColor{
+.titleColor {
   color: white;
 }
 
-.accordion-item{
+.accordion-item {
   width: 1000px;
   margin: 10px;
   display: block;
+}
+
+.flush-collapseOne {
+  background-color: fuchsia;
 }
