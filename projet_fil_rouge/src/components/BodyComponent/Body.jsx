@@ -3,7 +3,11 @@ import './Body.css';
 
 const Body = () => {
     return (
-        <img className='netBackground' src='./img/background.jpg' />
+        <div>
+            <img className='netBackground' src='./img/background.jpg' />
+            {/* <hr className='separation' /> */}
+        </div>
+
     );
 };
 

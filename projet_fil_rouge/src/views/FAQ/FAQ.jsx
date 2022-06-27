@@ -3,12 +3,12 @@ import './FAQ.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap";
 import AddIcon from '@mui/icons-material/Add';
-import NavBar from '../../components/NavBarComponent/NavBar';
 
 const FAQ = () => {
     return (
 
         <div className='container-fluid'>
+            
             <div className='title'>
                 <h1>Frequently asked questions</h1>
             </div>

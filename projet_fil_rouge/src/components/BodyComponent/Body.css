@@ -1,3 +1,9 @@
 .netBackground {
-    background-blend-mode: inherit;
+    height: 100%;
+    width: 100%;
+}
+
+.separation {
+    padding: 50px;
+    color: fuchsia;
 }

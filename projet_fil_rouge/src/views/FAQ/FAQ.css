@@ -4,9 +4,10 @@
   width: 100%;
   background-color: black;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  /* flex-wrap: wrap; */
   z-index: 0.5;
   position: absolute;
 }
@@ -15,6 +16,8 @@
   display: flex;
   flex: inline;
   color: white;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 #backgroundColor {
@@ -64,3 +67,4 @@
 .flush-collapseOne {
   background-color: fuchsia;
 }
+
