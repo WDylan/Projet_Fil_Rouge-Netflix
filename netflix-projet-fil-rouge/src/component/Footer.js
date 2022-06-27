@@ -12,6 +12,20 @@ function Footer() {
                 <p className='footer__top'>Des questions ? Appelez le
                     <a className='footer__top-a' href='tel:(+33) 0805-543-063'>(+33) 0805-543-063</a>
                 </p>
+                <div className='footer__socials'>
+                    <a href='https://fr-fr.facebook.com/netflixfrance/' className='footer__social'>
+                        <FacebookIcon />
+                    </a>
+                    <a href='https://www.instagram.com/netflixfr/' className='footer__social'>
+                        <InstagramIcon />
+                    </a>
+                    <a href='https://twitter.com/NetflixFR' className='footer__social' >
+                        <TwitterIcon />
+                    </a>
+                    <a href='https://www.youtube.com/c/NetflixFrance/featured' className='footer__social'>
+                        <YouTubeIcon />
+                    </a>
+                </div>
                 <ul className='footer__links'>
                     <li className='footer__link'>
                         <a href='/'>FAQ</a>
@@ -47,20 +61,6 @@ function Footer() {
                         <a href='/'>Compte</a>
                     </li>
                 </ul>
-                <div className='footer__socials'>
-                    <a href='https://fr-fr.facebook.com/netflixfrance/' className='footer__social'>
-                        <FacebookIcon />
-                    </a>
-                    <a href='https://www.instagram.com/netflixfr/' className='footer__social'>
-                        <InstagramIcon />
-                    </a>
-                    <a href='https://twitter.com/NetflixFR' className='footer__social' >
-                        <TwitterIcon />
-                    </a>
-                    <a href='https://www.youtube.com/c/NetflixFrance/featured' className='footer__social'>
-                        <YouTubeIcon />
-                    </a>
-                </div>
                 <div className='footer__copy'>
                     Netflix - Projet fil rouge
                 </div>

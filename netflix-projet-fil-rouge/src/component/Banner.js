@@ -23,11 +23,10 @@ function Banner() {
         fetchData();
     }, []);
 
-    function cacheText(string, i) {
-        return string?.length > i ? string.substr(0, i - 1)
-            + "..." : "Pas de description";
+    function truncate(string, n) {
+        return string?.length > n ? string.substr(0, n - 1)+ "..." : string;
     }
-    console.log(movie)
+
 
     const backgroundStyle = {
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
@@ -43,7 +42,7 @@ function Banner() {
                     {movie?.title || movie?.name || movie?.original_title}
                 </h1>
                 <p className='banner__description'>
-                    {movie?.overview || cacheText(movie?.overview, 100)}
+                    {truncate(movie?.overview, 150)}
                 </p>
                 <div className='banner__buttons'>
                     <button className='banner__button banner__button--play'>
