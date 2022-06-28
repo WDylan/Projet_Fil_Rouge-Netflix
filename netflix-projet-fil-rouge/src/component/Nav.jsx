@@ -5,9 +5,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Link } from 'react-router-dom'
-import Login from '../Views/SignInView/SignIn';
-import SignUp from '../Views/SignUp/SignUp';
+import {
+    Link
+} from 'react-router-dom';
+import Routers from '../Routers'
 
 
 function Nav() {
@@ -27,6 +28,7 @@ function Nav() {
     }
 
     return (
+
         <div className={`nav ${navBlack || toggleMenu ? "nav--black" : "nav--transparent"} 
         ${toggleMenu && "show"}`}>
             <button className='nav__burger' onClick={handleClick}>
@@ -63,7 +65,9 @@ function Nav() {
                     <img className='nav__avatar' src='./img/Netflix-avatar.png' />
                 </a>
             </div>
-        </div>
+        </div >
+
+
     )
 }
 
