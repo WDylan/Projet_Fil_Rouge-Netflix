@@ -1,6 +1,6 @@
 import "./SignIn.scss";
 
-export default function Login() {
+function Login() {
     return (
         <div clasName="login">
             <div clasName="top">
@@ -27,3 +27,5 @@ export default function Login() {
         </div>
     )
 }
+
+export default Login;

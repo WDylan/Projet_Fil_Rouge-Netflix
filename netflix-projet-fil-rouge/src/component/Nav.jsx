@@ -34,9 +34,11 @@ function Nav() {
                 <a href='/' className='nav__link'>
                     Accueil
                 </a>
+
                 <a href='/' className='nav__link'>
                     Séries
                 </a>
+
                 <a href='/' className='nav__link'>
                     Films
                 </a>
