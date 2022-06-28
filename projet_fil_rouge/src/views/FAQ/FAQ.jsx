@@ -3,6 +3,7 @@ import './FAQ.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap";
 import AddIcon from '@mui/icons-material/Add';
+import Footer from '../../components/FooterComponent/Footer';
 
 const FAQ = () => {
     return (
@@ -10,14 +11,14 @@ const FAQ = () => {
         <div className='container-fluid'>
             
             <div className='title'>
-                <h1>Frequently asked questions</h1>
+                <h1>Foire aux questions</h1>
             </div>
 
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item" id="backgroundColor">
                     <h2 class="accordion-header" id="flush-headingOne">
                         <button id="backgroundColor" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            <div className='titleColor'>Netflix, qu'est-ce que c'est ? <AddIcon /></div>
+                            <div className='titleColor'>Netflix, qu'est-ce que c'est ? <AddIcon className='positionIcone' /></div>
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -30,7 +31,7 @@ const FAQ = () => {
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingTwo">
                         <button id="backgroundColor" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            <div className="titleColor">Combien coûte Netflix ? <AddIcon /></div>
+                            <div className="titleColor">Combien coûte Netflix ? <AddIcon className='positionIcone' /></div>
                         </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -40,7 +41,7 @@ const FAQ = () => {
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingThree">
                         <button id="backgroundColor" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            <div className="titleColor">Où puis-je regarder Netflix ? <AddIcon /></div>
+                            <div className="titleColor">Où puis-je regarder Netflix ? <AddIcon className='positionIcone' /></div>
                         </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -52,7 +53,7 @@ const FAQ = () => {
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingFour">
                         <button id="backgroundColor" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                            <div className="titleColor">Comment puis-je annuler mon forfait ? <AddIcon /></div>
+                            <div className="titleColor">Comment puis-je annuler mon forfait ? <AddIcon className='positionIcone' /></div>
                         </button>
                     </h2>
                     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
@@ -62,7 +63,7 @@ const FAQ = () => {
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingFive">
                         <button id="backgroundColor" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                            <div className="titleColor">Que puis-je regarder sur Netflix ? <AddIcon /></div>
+                            <div className="titleColor">Que puis-je regarder sur Netflix ? <AddIcon className='positionIcone' /></div>
                         </button>
                     </h2>
                     <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
@@ -72,7 +73,7 @@ const FAQ = () => {
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSix">
                         <button id="backgroundColor" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                            <div className="titleColor">Est-ce que Netflix est adapté aux enfants ? <AddIcon /></div>
+                            <div className="titleColor">Est-ce que Netflix est adapté aux enfants ? <AddIcon className='positionIcone' /></div>
                         </button>
                     </h2>
                     <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
@@ -82,6 +83,7 @@ const FAQ = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

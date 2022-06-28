@@ -1,0 +1,38 @@
+.footer {
+    color: grey;
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+    
+}
+
+a {
+    color: grey;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.footer__top-a {
+    cursor: pointer;
+}
+
+.footer__socials {
+    margin-left: -.2rem;
+    padding: 1rem 0;
+}
+
+.footer__social {
+    margin-right: 1.1rem;
+}
+
+
+.footer__link {
+    /* display: flex;
+    flex-wrap: wrap;
+    list-style: none; */
+}
+
+.footer__copy {
+    /* display: flex;
+    flex-wrap: wrap;
+    list-style: none; */
+}

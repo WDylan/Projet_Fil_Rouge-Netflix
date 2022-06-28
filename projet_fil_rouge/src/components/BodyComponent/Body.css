@@ -7,3 +7,13 @@
     padding: 50px;
     color: fuchsia;
 }
+
+.myBody {
+    background-image: url("../../../public/img/Netflix-Background-1.jpg");
+    height: 1000px;
+}
+
+.socleMyBody {
+    /* background-color: rgb(30, 30, 30); */
+    background-color: fuchsia;
+}

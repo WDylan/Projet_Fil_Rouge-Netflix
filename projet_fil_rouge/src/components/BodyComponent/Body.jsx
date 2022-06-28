@@ -1,12 +1,13 @@
 import React from 'react';
+import NavBar from '../NavBarComponent/NavBar';
 import './Body.css';
+
 
 const Body = () => {
     return (
-        <div>
-            <img className='netBackground' src='./img/background.jpg' />
-            {/* <hr className='separation' /> */}
-        </div>
+            <div className='myBody'>
+                <NavBar />
+            </div>
 
     );
 };
