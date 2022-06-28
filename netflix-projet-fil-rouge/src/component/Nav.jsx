@@ -5,6 +5,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Link } from 'react-router-dom'
+import Login from '../Views/SignInView/SignIn';
+import SignUp from '../Views/SignUp/SignUp';
 
 
 function Nav() {

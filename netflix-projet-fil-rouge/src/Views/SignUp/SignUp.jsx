@@ -1,4 +1,5 @@
-import "./signUp.scss";
+import "./SignUp.scss"
+import { Link } from 'react-router-dom';
 
 function SignUp() {
     return (
@@ -15,9 +16,10 @@ function SignUp() {
                     <input type="text" placeholder="Prénom" />
                     <input type="email" placeholder="Adresse Email" />
                     <input type="password" placeholder="Mot de passe"/>
-                    <button clasName="loginButton">S'identifier</button>
+                    <button className="loginButton"><Link to='./signup'>S'identifier</Link></button>
                     <span>
-                       Déjà inscrit ? <b>Connectez-vous.</b>
+                       Déjà inscrit ? 
+                       <Link to='./login'><b>Connectez-vous.</b></Link>
                     </span>
                 </form>
 
