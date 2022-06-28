@@ -1,16 +1,15 @@
 import './App.css';
 import Body from './components/BodyComponent/Body';
-import Footer from './components/FooterComponent/Footer';
-import Header from './components/HeaderComponent/Header';
-import FAQ from './views/FAQ/FAQ';
+// import FAQ from './views/FAQ/FAQ';
+import FAQ2TEST from './views/FAQ/FAQ2TEST';
 
 function App() {
   return (
     <div className="App">
-      
+
       <Body />
-      <FAQ />
-      <Header />
+      {/* <FAQ /> */}
+      <FAQ2TEST />
       {/* <Footer /> */}
     </div>
   );
