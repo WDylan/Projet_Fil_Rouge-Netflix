@@ -3,6 +3,7 @@ import './SignIn.scss'
 
 function Login() {
     return (
+        <div>
         <div clasName="login">
             <div clasName="top">
                 <div clasName="login-wrapper">
@@ -25,6 +26,7 @@ function Login() {
                 </form>
 
             </div>
+        </div>
         </div>
     )
 }

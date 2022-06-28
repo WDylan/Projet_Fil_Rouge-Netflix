@@ -1,15 +1,18 @@
 import './App.scss';
-import Nav from './component/Nav';
-import Footer from './component/Footer';
-import Banner from './component/Banner';
-import Row from './component/Row'
-import requests from './config/Requests';
-import FAQ from './Views/FAQ/Faq'
+
+import Login from './Views/SignInView/SignIn';
+// import Nav from './component/Nav';
+// import Footer from './component/Footer';
+// import Banner from './component/Banner';
+// import Row from './component/Row'
+// import requests from './config/Requests';
+// import FAQ from './Views/FAQ/Faq'
+// import Login from './Views/SignInView/SignIn';
 
 function App() {
   return (
     <div className="App">
-      <FAQ />
+      <Login />
       {/* Navbar */}
       {/* <Nav /> */}
 
