@@ -9,30 +9,13 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-
-
-function CustomToggle({ children, eventKey }) {
-    const decoratedOnClick = useAccordionButton(eventKey, () =>
-        console.log('totally custom!'),
-    );
-
-    return (
-        <span
-            type="button"
-            onClick={decoratedOnClick}
-        >
-            {children}
-        </span>
-    );
-}
-
 function Example() {
     return (
         <Accordion defaultActiveKey="0">
             <Card>
                 <Card.Header>
                     <CustomToggle eventKey="0">Netflix, qu'est-ce que c'est ?
-                        <FontAwesomeIcon icon={faPlus}/>
+                        {/* <FontAwesomeIcon icon={faPlus}/> */}
                     </CustomToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
@@ -90,7 +73,20 @@ function Example() {
 };
 
 
+function CustomToggle({ children, eventKey }) {
+    const decoratedOnClick = useAccordionButton(eventKey, () =>
+        console.log('totally custom!'),
+    );
 
+    return (
+        <span
+            type="button"
+            onClick={decoratedOnClick}
+        >
+            {children}
+        </span>
+    );
+}
 
 export default Example;
 
