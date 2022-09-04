@@ -27,39 +27,56 @@ function Footer() {
                     </a>
                 </div>
                 <ul className='footer__links'>
-                    <li className='footer__link'>
-                        <a href='/'>FAQ</a>
+                    <li>
+                        <li className='footer__link'>
+                            <a href='/'>FAQ</a>
+                        </li>
+                        <li className='footer__link'>
+                            <a href='/'>Relations Investisseurs</a>
+                        </li>
+                        <li className='footer__link'>
+                            <a href='/'>Modes de lecture</a>
+                        </li>
                     </li>
-                    <li className='footer__link'>
-                        <a href='/'>Relations Investisseurs</a>
+
+                    <li>
+                        <li className='footer__link'>
+                            <a href='/'>Mentions légales</a>
+                        </li>
+                        <li className='footer__link'>
+                            <a href='/'>Informations légales</a>
+                        </li>
+                        <li className='footer__link'>
+                            <a href='/'>Centre d'aide</a>
+                        </li>
                     </li>
-                    <li className='footer__link'>
-                        <a href='/'>Modes de lecture</a>
+
+                    <li>
+                        <li className='footer__link'>
+                            <a href='/'>Recrutement</a>
+                        </li>
+                        <li className='footer__link'>
+                            <a href='/'>Conditions d'utilisation</a>
+                        </li>
+                        <li>
+                            <li className='footer__link'>
+                                <a href='/'>Nous contacter</a>
+                            </li>
+                        </li>
                     </li>
-                    <li className='footer__link'>
-                        <a href='/'>Mentions légales</a>
+
+                    <li>
+                        <li>
+                            <li className='footer__link'>
+                                <a href='/'>Seulement sur Netflix</a>
+                            </li>
+                            <li className='footer__link'>
+                                <a href='/'>Compte</a>
+                            </li>
+                        </li>
                     </li>
-                    <li className='footer__link'>
-                        <a href='/'>Informations légales</a>
-                    </li>
-                    <li className='footer__link'>
-                        <a href='/'>Centre d'aide</a>
-                    </li>
-                    <li className='footer__link'>
-                        <a href='/'>Recrutement</a>
-                    </li>
-                    <li className='footer__link'>
-                        <a href='/'>Conditions d'utilisation</a>
-                    </li>
-                    <li className='footer__link'>
-                        <a href='/'>Nous contacter</a>
-                    </li>
-                    <li className='footer__link'>
-                        <a href='/'>Seulement sur Netflix</a>
-                    </li>
-                    <li className='footer__link'>
-                        <a href='/'>Compte</a>
-                    </li>
+
+
                 </ul>
                 <div className='footer__copy'>
                     Netflix - Projet fil rouge

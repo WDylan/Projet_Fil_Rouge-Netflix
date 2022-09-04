@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {
     Link
 } from 'react-router-dom';
@@ -63,6 +64,15 @@ function Nav() {
                 </a>
                 <a href='/' className='nav__action'>
                     <img className='nav__avatar' src='./img/Netflix-avatar.png' />
+                    <div className="profile">
+
+                        <ArrowDropDownIcon className="icon" />
+
+                        <div className="options">
+                            <span>Options</span>
+                            <span>Deconnexion</span>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div >
