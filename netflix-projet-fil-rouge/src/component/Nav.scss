@@ -23,7 +23,8 @@
 
     &__burger {
         cursor: pointer;
-        color: fuchsia;
+        background: linear-gradient(to bottom, rgba(74, 74, 74, 0.6), rgba(0, 0, 0, 0));
+        color: white;
         margin-right: 1rem;
 
         @media screen and (min-width: 768px) {
@@ -99,12 +100,34 @@
             cursor: pointer;
         }
 
+        .icon {
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            right: 35px;
+            bottom: 10px;
+
+        }
+
         &:hover {
             .options {
+                right: 2%;
+                height: 120px;
+                width: 150px;
                 display: flex;
+                flex-wrap: wrap;
                 flex-direction: column;
                 position: absolute;
+                background-color: black;
+                opacity: 65%;
+
+                @media screen and (min-width: 768px) {
+                    margin-left: 15px;
+                    right: 1.5%;
+                    position: absolute;
+                }
             }
         }
     }
-}
+} 

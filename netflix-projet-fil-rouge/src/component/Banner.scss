@@ -53,6 +53,20 @@
                 svg {
                     margin-right: 0.4rem;
                 }
+                &--volume {
+                    position: absolute;
+                    display: flex;
+                    right: 5%;
+                    padding-bottom: 1.3rem;
+                    justify-content: center;
+                    align-items: center;
+                    height: 60px;
+                    width: 100px;
+                    border-radius: 45px;
+                    background-color: transparent;
+                    overflow: hidden;
+
+                }
             }
         }
     }

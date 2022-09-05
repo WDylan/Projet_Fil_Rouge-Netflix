@@ -18,7 +18,7 @@
         .row__image {
             width: 300px;
             padding: 0.5rem;
-            transition: transform 0.3s ease-in;
+            transition: transform 0.2s ease-int;
             &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
@@ -26,13 +26,13 @@
         }
     }
   ::-webkit-scrollbar{
-    display: none;
-    background-color: #111;
+    // display: none;
+    background-color: transparent;
   }  
   ::-webkit-scrollbar-thumb {
     background-clip: padding-box;
-    background-color: #000000;
-    border-radius: 9px;
+    background-color: rgba(255, 255, 255, 0.3);;
+    border-radius: 10px;
     border: 3px solid transparent;
     box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
   }

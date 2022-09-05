@@ -65,12 +65,11 @@ function Nav() {
                 <a href='/' className='nav__action'>
                     <img className='nav__avatar' src='./img/Netflix-avatar.png' />
                     <div className="profile">
-
                         <ArrowDropDownIcon className="icon" />
-
                         <div className="options">
-                            <span>Options</span>
-                            <span>Deconnexion</span>
+                            <span>Gérer les profils</span>
+                            <span>Compte</span>
+                            <span>Se déconnecter</span>
                         </div>
                     </div>
                 </a>
