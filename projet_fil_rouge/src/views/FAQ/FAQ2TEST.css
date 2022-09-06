@@ -66,3 +66,13 @@
 .active:after {
   content: "\02796"; /* Unicode character for "minus" sign (-) */
 }
+
+
+.our-story-cards {
+  margin: 0 auto;
+}
+
+div {
+  display: block;
+}
+

@@ -1,0 +1,36 @@
+import React from 'react';
+import "./Banner.scss";
+import requests from '../../config/Requests';
+import axios from "axios";
+
+function Banner() {
+
+    const bannerStyle = {
+        backgroundImage: `url("/images/background.jpg")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+    }
+
+
+    return (
+        <header className='banner' style={bannerStyle}>
+            <div className='banner_content'>
+                <h1 className='banner_title'>
+                    Films, séries et bien plus en illimité.<br />
+                </h1>
+                <span className='_span_1'>Où que vous soyez. Annulez à tout moment.<br />
+                    Prêt à regarder Netflix ?</span>
+                <span className='_span_2'> Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</span>
+
+                <form className='email_input'>
+                    <input placeholder='Adresse e-mail'></input>
+                    <button className='start_button'>Commencer</button>
+                </form>
+            </div>
+        </header>
+    )
+
+
+}
+
+export default Banner;

@@ -1,0 +1,150 @@
+.accordions {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 285px;
+  margin-top: 30px;
+  color: white
+}
+
+.accordion_title{
+  color: white;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  background: rgb(56, 55, 55);
+  padding: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.accordion_title:hover,
+.active .accordion_title {
+  cursor: pointer;
+}
+
+.accordion_icon{
+  position: relative;
+  margin-top: 10px;
+  width: 10px;
+  height: 1px;
+  background: white;
+}
+
+.accordion_icon::before{
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 1px;
+  background: white ;
+  transform: rotate(90deg);
+  transition: all .2s;
+}
+
+.active .accordion_icon::before{
+  transform: rotate(0deg);
+  opacity: 0;
+}
+
+.accordion_content{
+  visibility: collapse;
+  height: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: all .2s ease-in;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .accordion-parent {
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     height: 50vh; // 50vh = 50% de l'écran en hauteur
+//     font-size: 0.9rem;
+//     padding-bottom: 3rem;
+//     color: #fff;
+//     background-color: rgb(00, 00, 00);
+// }
+//     /* Style the buttons that are used to open and close the accordion panel */
+//     .accordion {
+//         background-color: rgb(84,84,84);
+//         color: white;
+//         font-weight: 500;
+//         cursor: pointer;
+//         padding: 18px;
+//         width: 100%;
+//         border: none;
+//         text-align: left;
+//         outline: none;
+//         font-size: 15px;
+//         transition: 0.4s;
+//         margin-bottom: 5px;
+//       }
+
+//   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+//   .active, .accordion:hover {
+//     background-color: #ccc; 
+//   }
+
+//   /* Style the accordion panel. Note: hidden by default */
+//   .panel {
+//     padding: 0 18px;
+//     display: none;
+//     background-color: fuchsia;
+//     overflow: hidden;
+//   }
+
+//   .panel {
+//     padding: 0 18px;
+//     background-color: white;
+//     max-height: 0;
+//     overflow: hidden;
+//     transition: max-height 0.2s ease-out;
+//   }
+
+//   .accordion:after {
+//     content: '\02795'; /* Unicode character for "plus" sign (+) */
+//     font-size: 13px;
+//     color: white;
+//     float: right;
+//     margin-left: 5px;
+//   }
+
+//   .active:after {
+//     content: "\2796"; /* Unicode character for "minus" sign (-) */
+//   }
