@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Nav-Main.scss";
+import ".//Style/Nav-Main.scss"
 import SignUp from '../Views/SignUp/SignUp';
 
 function NavMain() {

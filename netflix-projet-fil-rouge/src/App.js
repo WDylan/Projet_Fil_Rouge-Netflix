@@ -1,42 +1,32 @@
 import './App.scss';
-
-
-import Nav from './component/Nav';
-import Footer from './component/Footer';
-import Banner from './component/Banner';
-import Row from './component/Row'
-import requests from './config/Requests';
+import React from "react";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from 'react-router-dom';
+import HomeScreen from './Views/HomeScreen/HomeScreen';
+import LoginScreen from './Views/SignInView/LoginScreen'
+import { Home } from '@mui/icons-material';
 // import FAQ from './Views/FAQ/Faq'
 // import Login from './Views/SignInView/SignIn';
 
 function App() {
+  const user = null;
+//   { 
+// name : "test",
+//   };
   return (
-    <div className="App">
-      {/* Navbar */}
-      <Nav />
-
-      {/* Banner */}
-      <Banner />
-
-      {/* Row s*/}
-      <Row title="Programmes Originaux Netflix" fetchUrl={requests.fetchNetflixOriginals} isPoster={true}/>
-      <Row title="Tendances actuelles" fetchUrl={requests.fetchTrending}  />
-      <Row title="Les mieux notés" fetchUrl={requests.fetchTopRated} />
-      <Row title="Documentaires" fetchUrl={requests.fetchDocumentaries} />
-      <Row title="Films d'action" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Comédies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Films d'horreur" fetchUrl={requests.fetchHorrorMovies} />
-      <Row title="Films romantique" fetchUrl={requests.fetchRomanceMovies} />
-
-      {/* Vidéo*/}
-
-
-      {/* Quick view */}
-
-
-      {/* Footer */}
-      <Footer />
-
+    <div className='app'>
+      <BrowserRouter>
+        {!user ? (
+          <LoginScreen />
+        ) : (
+          <Routes>
+            <Route path="/Home" element={<HomeScreen/>}/>
+          </Routes>
+        )}
+      </BrowserRouter>
     </div>
   );
 }

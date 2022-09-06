@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import "./Nav.scss";
+import ".//Style/Nav.scss"
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
@@ -9,7 +9,6 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {
     Link
 } from 'react-router-dom';
-import Routers from '../Routers'
 
 
 function Nav() {

@@ -1,0 +1,31 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    padding: 20px 3%;
+    font-size: 0.9rem;
+    color: white;
+    background: linear-gradient(to bottom, rgba(74, 74, 74, 0.6), rgba(0, 0, 0, 0));
+    transition: background-color .3s ease-in-out;
+
+    &__logo {
+        max-width: 170px;
+    }
+
+}
+
+.loginButton {
+    color: white;
+    background-color: #e50914;
+    line-height: normal;
+    padding: 6px 17px;
+    font-weight: 400;
+    font-size: 1rem;
+    float: right;
+    border-radius: 6%;
+    cursor: pointer;
+}

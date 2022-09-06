@@ -1,4 +1,4 @@
-import "./Row.scss";
+import ".//Style/Row.scss"
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
