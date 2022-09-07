@@ -38,7 +38,26 @@ namespace APIAspNetCore.Models.DAO
 
         public override bool Delete(int id)
         {
-            throw new NotImplementedException();
+            Films film = new Films();
+            // Création d'une instance de connection
+            _connection = Connection.New;
+            // Préparation de la command
+            _request = "DELETE FILMS WHERE id=@IdFilm";
+            _command = new SqlCommand(_request, _connection);
+
+            // Ajout des paramètres de la command
+            _command.Parameters.Add(new SqlParameter("@IdFilm", id));
+
+            // Execution de la command
+            _connection.Open();
+            int nbLignes = _command.ExecuteNonQuery();
+
+            // Libération de l'objet command
+            _command.Dispose();
+
+            // Fermeture de la connection
+            _connection.Close();
+            return (nbLignes > 0);
         }
 
         public override bool Delete(Films element)
@@ -100,7 +119,41 @@ namespace APIAspNetCore.Models.DAO
 
         public override List<Films> FindAll()
         {
-            throw new NotImplementedException();
+            List<Films> films = new();
+            _connection = Connection.New;
+            _request = "SELECT fil.titre, fil.genre, fil.nbepisodes, fil.datesortie, fil.synopsis, fil.recommandation, fil.acteur_nom, fil.realisateur_nom, fil.image, fil.video" +
+                "FROM FILMS AS fil";
+
+            _command = new SqlCommand(_request, _connection);
+            _connection.Open();
+
+            _reader = _command.ExecuteReader();
+            while (_reader.Read())
+            {
+                Films f = null;
+                if (f != null)
+                {
+                    f = new Films()
+                    {
+                        IdFilm = _reader.GetInt32(0),
+                        Titre = _reader.GetString(1),
+                        Genre = _reader.GetString(2),
+                        NbEpisodes = _reader.GetInt32(3),
+                        DateSortie = _reader.GetDateTime(4),
+                        Synopsis = _reader.GetString(5),
+                        Recommandation = _reader.GetInt32(6),
+                        Acteur_Nom = _reader.GetString(7),
+                        Realisateur_Nom = _reader.GetString(8),
+                        Image = _reader.GetString(9),
+                        Video = _reader.GetString(10)
+                    };
+                    films.Add(f);
+                }
+            }
+            _reader.Close();
+            _command.Dispose();
+            _connection.Close();
+            return films;
         }
 
         public override bool Update(Films element)
