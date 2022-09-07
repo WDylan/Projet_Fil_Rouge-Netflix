@@ -1,86 +1,63 @@
-﻿using API_Netflix_ASPNetCore.Models.DAO;
-using Microsoft.AspNetCore.Http;
+﻿using API_Netflix_ASPNetCore.Interface;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace API_Netflix_ASPNetCore.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class FilmsController : Controller
     {
-        // GET: FilmsController
-        public ActionResult Index(string ? search)
+        private IWebHostEnvironment _env;
+        private IUpload _upload;
+
+        public FilmsController(IWebHostEnvironment env, IUpload upload)
         {
-            
-            return View();
+            _env = env;
+            _upload = upload;
         }
 
-        // GET: FilmsController/Details/5
-        public ActionResult Details(int id)
+
+        // GET: api/<FilmsController>
+        [HttpGet]
+        public IEnumerable <Films> Get()
+        {
+            List<Films> filmsList = new();
+            filmsList = Films.GetAll();
+            return filmsList;
+        }
+
+        // GET: api/<FilmsController>/5
+        [HttpGet("{id}")]
+        public Films Get(int id)
         {
             Films film = new();
-            return View();
+            film = film.Get(id).Item2;
+            return film;
         }
 
-        // GET: FilmsController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: FilmsController/Create
+        // POST: api/<FilmsController>/
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Post([FromBody] Films film)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            //film.Add();
+            return Ok(new { message = "Film ajouté !", Film = film });
         }
 
-        // GET: FilmsController/Edit/5
-        public ActionResult Edit(int id)
+        // PUT api/<FilmsController>/5
+        [HttpPut("{id")]
+        public IActionResult Put(int id, [FromBody] Films film)
         {
-            return View();
+            film.IdFilm = id;
+            return Ok(new { message = "Film Modifié", Film = film });
         }
 
-        // POST: FilmsController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // DELETE api/<FilmsController>/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok(new { message = "Film supprimé", Id = id });
         }
-
-        // GET: FilmsController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: FilmsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+  
     }
 }

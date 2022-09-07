@@ -8,7 +8,7 @@ namespace API_Netflix_ASPNetCore.Models.DAO
         public override int Create(Films element)
         {
             // Rédaction de la requête
-            _request = "INSERT INTO FILMS(TITRE, GENRE, NBEPISODES, DATESORTIE, SYNOPSIS, RECOMMANDATION, ACTEUR_NOM, REALISATEUR_NOM, IMAGE, VIDEO) OUTPUT INSERTED.ID VALUES (@Titre, @Genre, @NbEpisodes, @DateSortie, @Synopsis, @Recommandation,@Acteur_Nom, @Realisateur_Nom, @Image, @Video)";
+            _request = "INSERT INTO FILMS(TITRE, GENRE, DUREE, DATESORTIE, SYNOPSIS, RECOMMANDATION, ACTEUR_NOM, REALISATEUR_NOM, IMAGE, VIDEO) OUTPUT INSERTED.ID VALUES (@Titre, @Genre, @NbEpisodes, @DateSortie, @Synopsis, @Recommandation,@Acteur_Nom, @Realisateur_Nom, @Image, @Video)";
             // Création d'une nouvelle instance de connection
             _connection = Connection.New;
             // Création de l'obget command
@@ -16,7 +16,7 @@ namespace API_Netflix_ASPNetCore.Models.DAO
             // Ajout des params à la requête
             _command.Parameters.Add(new SqlParameter("@Titre", element.Titre));
             _command.Parameters.Add(new SqlParameter("@Genre", element.Genre));
-            _command.Parameters.Add(new SqlParameter("@NbEpisodes", element.NbEpisodes));
+            _command.Parameters.Add(new SqlParameter("@NbEpisodes", element.Duree));
             _command.Parameters.Add(new SqlParameter("@DateSortie", element.DateSortie));
             _command.Parameters.Add(new SqlParameter("@Synopsis", element.Synopsis));
             _command.Parameters.Add(new SqlParameter("@Recommandation", element.Recommandation));
@@ -64,11 +64,11 @@ namespace API_Netflix_ASPNetCore.Models.DAO
             throw new NotImplementedException();
         }
 
-        public override Films Find(int index)
+        public override Films Get(int index)
         {
             Films film = null;
             _connection = Connection.New;
-            _request = "SELECT fil.titre, fil.genre, fil.nbepisodes, fil.datesortie, fil.synopsis, fil.recommandation, fil.acteur_nom, fil.realisateur_nom, fil.image, fil.video" +
+            _request = "SELECT fil.titre, fil.genre, fil.duree, fil.datesortie, fil.synopsis, fil.recommandation, fil.acteur_nom, fil.realisateur_nom, fil.image, fil.video" +
                 "FROM FILMS AS fil";
             _command = new SqlCommand(_request, _connection);
             _connection.Open();
@@ -84,7 +84,7 @@ namespace API_Netflix_ASPNetCore.Models.DAO
                         IdFilm = _reader.GetInt32(0),
                         Titre = _reader.GetString(1),
                         Genre = _reader.GetString(2),
-                        NbEpisodes = _reader.GetInt32(3),
+                        Duree = _reader.GetInt32(3),
                         DateSortie = _reader.GetDateTime(4),
                         Synopsis = _reader.GetString(5),
                         Recommandation = _reader.GetInt32(6),
@@ -103,10 +103,10 @@ namespace API_Netflix_ASPNetCore.Models.DAO
             return film;
         }
 
-        public override List<Films> Find(Func<Films, bool> criteria)
+        public override List<Films> Get(Func<Films, bool> criteria)
         {
             List<Films> films = new List<Films>();
-            FindAll().ForEach(s =>
+            GetAll().ForEach(s =>
             {
                 if (criteria(s))
                 {
@@ -116,11 +116,11 @@ namespace API_Netflix_ASPNetCore.Models.DAO
             return films;
         }
 
-        public override List<Films> FindAll()
+        public override List<Films> GetAll()
         {
             List<Films> films = new();
             _connection = Connection.New;
-            _request = "SELECT fil.titre, fil.genre, fil.nbepisodes, fil.datesortie, fil.synopsis, fil.recommandation, fil.acteur_nom, fil.realisateur_nom, fil.image, fil.video" +
+            _request = "SELECT fil.titre, fil.genre, fil.duree, fil.datesortie, fil.synopsis, fil.recommandation, fil.acteur_nom, fil.realisateur_nom, fil.image, fil.video" +
                 "FROM FILMS AS fil";
 
             _command = new SqlCommand(_request, _connection);
@@ -137,7 +137,7 @@ namespace API_Netflix_ASPNetCore.Models.DAO
                         IdFilm = _reader.GetInt32(0),
                         Titre = _reader.GetString(1),
                         Genre = _reader.GetString(2),
-                        NbEpisodes = _reader.GetInt32(3),
+                        Duree = _reader.GetInt32(3),
                         DateSortie = _reader.GetDateTime(4),
                         Synopsis = _reader.GetString(5),
                         Recommandation = _reader.GetInt32(6),
@@ -158,12 +158,12 @@ namespace API_Netflix_ASPNetCore.Models.DAO
         public override bool Update(Films element)
         {
             _connection = Connection.New;
-            _request = "UPDATE FILMS SET titre=@Titre, genre=@Genre, nbEpisodes=@NbEpisodes, dateSortie=@DateSortie, synopsis=@Synopsis, recommandation = @recommandation, acteur_nom = @Acteur_Nom, realisateur_nom = @Realisateur_Nom, image = @Image, video=@Video" +
+            _request = "UPDATE FILMS SET titre=@Titre, genre=@Genre, duree=@Duree, dateSortie=@DateSortie, synopsis=@Synopsis, recommandation = @recommandation, acteur_nom = @Acteur_Nom, realisateur_nom = @Realisateur_Nom, image = @Image, video=@Video" +
                 " WHERE idfilm = @IdFilm";
             _command = new SqlCommand(_request, _connection);
             _command.Parameters.Add(new SqlParameter("@Titre", element.Titre));
             _command.Parameters.Add(new SqlParameter("@Genre", element.Genre));
-            _command.Parameters.Add(new SqlParameter("@NbEpisodes", element.NbEpisodes));
+            _command.Parameters.Add(new SqlParameter("@NbEpisodes", element.Duree));
             _command.Parameters.Add(new SqlParameter("@DateSortie", element.DateSortie));
             _command.Parameters.Add(new SqlParameter("@Synopsis", element.Synopsis));
             _command.Parameters.Add(new SqlParameter("@Recommandation", element.Recommandation));
