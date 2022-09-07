@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Yv61ARvYn93xCmG5Jjn/Jshl2zHp3WtqkqgKJgcTuPs=",
+  "Source": "API_Netflix_ASPNetCore",
+  "BasePath": "_content/API_Netflix_ASPNetCore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
