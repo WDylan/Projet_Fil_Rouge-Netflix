@@ -48,12 +48,54 @@ namespace APIAspNetCore.Models.DAO
 
         public override Films Find(int index)
         {
-            throw new NotImplementedException();
+            Films film = null;
+            _connection = Connection.New;
+            _request = "SELECT fil.titre, fil.genre, fil.nbepisodes, fil.datesortie, fil.synopsis, fil.recommandation, fil.acteur_nom, fil.realisateur_nom, fil.image, fil.video" +
+                "FROM FILMS AS fil";
+            _command = new SqlCommand(_request, _connection);
+            _connection.Open();
+
+            _reader = _command.ExecuteReader();
+            if (_reader.Read())
+            {
+                film = new Films();
+                if (film != null)
+                {
+                    film = new Films()
+                    {
+                        IdFilm = _reader.GetInt32(0),
+                        Titre = _reader.GetString(1),
+                        Genre = _reader.GetString(2),
+                        NbEpisodes = _reader.GetInt32(3),
+                        DateSortie = _reader.GetDateTime(4),
+                        Synopsis = _reader.GetString(5),
+                        Recommandation = _reader.GetInt32(6),
+                        Acteur_Nom = _reader.GetString(7),
+                        Realisateur_Nom = _reader.GetString(8),
+                        Image = _reader.GetString(9),
+                        Video = _reader.GetString(10)
+                    };
+                    film.IdFilm = index;
+                }
+
+            }
+            _reader.Close();
+            _command.Dispose();
+            _connection.Close();
+            return film;
         }
 
         public override List<Films> Find(Func<Films, bool> criteria)
         {
-            throw new NotImplementedException();
+            List<Films> films = new List<Films>();
+            FindAll().ForEach(s =>
+            {
+                if (criteria(s))
+                {
+                    films.Add(s);
+                }
+            });
+            return films;
         }
 
         public override List<Films> FindAll()
@@ -63,7 +105,26 @@ namespace APIAspNetCore.Models.DAO
 
         public override bool Update(Films element)
         {
-            throw new NotImplementedException();
+            _connection = Connection.New;
+            _request = "UPDATE FILMS SET titre=@Titre, genre=@Genre, nbEpisodes=@NbEpisodes, dateSortie=@DateSortie, synopsis=@Synopsis, recommandation = @recommandation, acteur_nom = @Acteur_Nom, realisateur_nom = @Realisateur_Nom, image = @Image, video=@Video" +
+                " WHERE idfilm = @IdFilm";
+            _command = new SqlCommand(_request, _connection);
+            _command.Parameters.Add(new SqlParameter("@Titre", element.Titre));
+            _command.Parameters.Add(new SqlParameter("@Genre", element.Genre));
+            _command.Parameters.Add(new SqlParameter("@NbEpisodes", element.NbEpisodes));
+            _command.Parameters.Add(new SqlParameter("@DateSortie", element.DateSortie));
+            _command.Parameters.Add(new SqlParameter("@Synopsis", element.Synopsis));
+            _command.Parameters.Add(new SqlParameter("@Recommandation", element.Recommandation));
+            _command.Parameters.Add(new SqlParameter("@Acteur_Nom", element.Acteur_Nom));
+            _command.Parameters.Add(new SqlParameter("@Realisateur_Nom", element.Realisateur_Nom));
+            _command.Parameters.Add(new SqlParameter("@Image", element.Image));
+            _command.Parameters.Add(new SqlParameter("@Video", element.Video));
+            _connection.Open();
+            int nbLignes = _command.ExecuteNonQuery();
+            _command.Dispose();
+            _connection.Close();
+
+            return nbLignes == 0;
         }
     }
 }
