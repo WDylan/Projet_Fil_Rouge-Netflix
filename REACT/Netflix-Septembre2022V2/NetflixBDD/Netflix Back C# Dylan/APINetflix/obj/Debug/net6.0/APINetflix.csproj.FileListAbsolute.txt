@@ -1,0 +1,7 @@
+C:\PRFDOTNET2022\MonRepos\Netflix-Septembre2022V2\NetflixBDD\Netflix Back C# Dylan\APINetflix\obj\Debug\net6.0\APINetflix.csproj.AssemblyReference.cache
+C:\PRFDOTNET2022\MonRepos\Netflix-Septembre2022V2\NetflixBDD\Netflix Back C# Dylan\APINetflix\obj\Debug\net6.0\APINetflix.GeneratedMSBuildEditorConfig.editorconfig
+C:\PRFDOTNET2022\MonRepos\Netflix-Septembre2022V2\NetflixBDD\Netflix Back C# Dylan\APINetflix\obj\Debug\net6.0\APINetflix.AssemblyInfoInputs.cache
+C:\PRFDOTNET2022\MonRepos\Netflix-Septembre2022V2\NetflixBDD\Netflix Back C# Dylan\APINetflix\obj\Debug\net6.0\APINetflix.AssemblyInfo.cs
+C:\PRFDOTNET2022\MonRepos\Netflix-Septembre2022V2\NetflixBDD\Netflix Back C# Dylan\APINetflix\obj\Debug\net6.0\APINetflix.csproj.CoreCompileInputs.cache
+C:\PRFDOTNET2022\MonRepos\Netflix-Septembre2022V2\NetflixBDD\Netflix Back C# Dylan\APINetflix\obj\Debug\net6.0\APINetflix.MvcApplicationPartsAssemblyInfo.cs
+C:\PRFDOTNET2022\MonRepos\Netflix-Septembre2022V2\NetflixBDD\Netflix Back C# Dylan\APINetflix\obj\Debug\net6.0\APINetflix.MvcApplicationPartsAssemblyInfo.cache
