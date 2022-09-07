@@ -52,6 +52,12 @@ namespace API_Netflix_ASPNetCore
         public string Video { get => video; set => video = value; }
         private SeriesDAO serieDAO { get => new(); }
 
+        public int AjouterSerie()
+        {
+            return serieDAO.Create(this);
+        }
+
+
         public override string ToString()
         {
             return $"\nSérie n° {idSerie} : {Titre} - {Genre} - {NbEpisodes} épisodes - Publié le {DateSortie}\n" +
