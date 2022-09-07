@@ -6,8 +6,8 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = ApiASPNetCore
-build_property.RootNamespace = ApiASPNetCore
+build_property.RootNamespace = APIAspNetCore
+build_property.RootNamespace = APIAspNetCore
 build_property.ProjectDir = C:\PRFDOTNET2022\Projet_Fil_Rouge\C#\ApiNetflix\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
@@ -41,4 +41,4 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/PRFDOTNET2022/Projet_Fil_Rouge/C\#/ApiNetflix/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-qsrpxt2xsd
+build_metadata.AdditionalFiles.CssScope = b-77rliay2w0

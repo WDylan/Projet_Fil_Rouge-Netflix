@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ApiASPNetCore")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("APIAspNetCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("ApiASPNetCore")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ApiASPNetCore")]
+[assembly: System.Reflection.AssemblyProductAttribute("APIAspNetCore")]
+[assembly: System.Reflection.AssemblyTitleAttribute("APIAspNetCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.
