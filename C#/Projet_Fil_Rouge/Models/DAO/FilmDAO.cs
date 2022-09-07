@@ -1,5 +1,5 @@
 ﻿using APIAspNetCore.Models.Classes;
-using APIAspNetCore.Models.Classes.Connection;
+using APINetflix.Models.Connection;
 using Microsoft.Data.SqlClient;
 
 namespace APIAspNetCore.Models.DAO

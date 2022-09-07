@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 
 
-namespace APIAspNetCore.Models.Classes.Connection
+namespace APINetflix.Models.Connection
 {
     internal class Connection
     {

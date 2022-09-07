@@ -1,4 +1,7 @@
-﻿
+﻿using APINetflix.Models.Connection;
+using Microsoft.Data.SqlClient;
+using System;
+using System.Net;
 
 namespace APIAspNetCore.Models.Classes
 {

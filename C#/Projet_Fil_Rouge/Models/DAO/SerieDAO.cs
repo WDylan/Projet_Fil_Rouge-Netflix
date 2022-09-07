@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using APIAspNetCore.Models.Classes;
+using APINetflix.Models.Connection;
 using System;
-using APIAspNetCore.Models.Classes.Connection;
 
 namespace APIAspNetCore.Models.DAO
 {

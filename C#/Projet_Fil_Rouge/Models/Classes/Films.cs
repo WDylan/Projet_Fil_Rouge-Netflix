@@ -1,6 +1,8 @@
-﻿
-
-using APIAspNetCore.Models.DAO;
+﻿using Microsoft.Data.SqlClient;
+using APIAspNetCore.Models.Classes;
+using System;
+using System.Net;
+using APINetflix.Models.Connection;
 
 namespace APIAspNetCore.Models.Classes
 {
@@ -17,7 +19,6 @@ namespace APIAspNetCore.Models.Classes
         private string realisateur_Nom;
         private string image;
         private string video;
-        
 
         public Films()
         {
@@ -51,7 +52,6 @@ namespace APIAspNetCore.Models.Classes
         public string Realisateur_Nom { get => realisateur_Nom; set => realisateur_Nom = value; }
         public string Image { get => image; set => image = value; }
         public string Video { get => video; set => video = value; }
-        
 
 
         public override string ToString()
