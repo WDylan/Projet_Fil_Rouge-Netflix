@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wdyla\\OneDrive\\Bureau\\projet fil rouge\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\APINetflix.csproj": {}
+    "C:\\PRFDOTNET2022\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\APINetflix.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wdyla\\OneDrive\\Bureau\\projet fil rouge\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\APINetflix.csproj": {
+    "C:\\PRFDOTNET2022\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\APINetflix.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wdyla\\OneDrive\\Bureau\\projet fil rouge\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\APINetflix.csproj",
+        "projectUniqueName": "C:\\PRFDOTNET2022\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\APINetflix.csproj",
         "projectName": "APINetflix",
-        "projectPath": "C:\\Users\\Wdyla\\OneDrive\\Bureau\\projet fil rouge\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\APINetflix.csproj",
-        "packagesPath": "C:\\Users\\Wdyla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wdyla\\OneDrive\\Bureau\\projet fil rouge\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\obj\\",
+        "projectPath": "C:\\PRFDOTNET2022\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\APINetflix.csproj",
+        "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
+        "outputPath": "C:\\PRFDOTNET2022\\Projet_Fil_Rouge\\netflix-projet-fil-rouge\\API\\APINetflix\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Wdyla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

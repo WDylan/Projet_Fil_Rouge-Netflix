@@ -203,8 +203,7 @@ namespace APINetflix.Models
 
         public static List<Series> SearchSeries(string search)
         {
-            return Find(s => s.Titre.Contains(search) || s.Synopsis.Contains(search) ||
-            s.Acteur_Nom.Contains(search) || s.Realisateur_Nom.Contains(search) || s.Image.Contains(search) || s.Video.Contains(search));
+            return Find(s => s.Titre.Contains(search) || s.Acteur_Nom.Contains(search) || s.Realisateur_Nom.Contains(search));
         }
 
         public static List<Series> Find(Func<Series, bool> criteria)
