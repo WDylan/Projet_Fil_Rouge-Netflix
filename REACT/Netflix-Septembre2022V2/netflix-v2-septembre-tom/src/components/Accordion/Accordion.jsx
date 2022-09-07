@@ -3,22 +3,30 @@ import { useState } from 'react';
 import "./Accordion.scss";
 
 
-function Accordion({ title, content }){
-  const [active, setActive] = useState(false)
-  
-  const handleToggle = e => {
-    setActive(!active)
-  }
+function Accordion() {
+const [show, setShow] = useState(false);
+const handleOpen = () => {
+setShow(!show);
+};
+return (
+<div className="Accordion">
+<div className="accordions">
+<div className="accordion_title" onClick={handleOpen}>
+<div>TITRE ACCORDEON</div>
+<div className="accordion_icon">{show ? '-' : '+'}</div>
+</div>
 
-
-  return (
-    <div className={`accordion ${active && "active"}`}>
-      <div className='accordion_title' onClick={handleToggle}>
-        {title} <span className='accordion_icon'></span>
-        </div>
-      <div className='accordion_content'>{content}</div>
-    </div>
-  )
+{show && (
+<div className="accordion-body">
+TESTTEXTE TEXTE TEXTETEXTE 
+TEXTETEXTETEXTETEXTETEXTETEXTETEXTE TEXTETEXTE
+</div>
+)}
+</div>
+</div>
+);
 }
+
+
 
 export default Accordion
