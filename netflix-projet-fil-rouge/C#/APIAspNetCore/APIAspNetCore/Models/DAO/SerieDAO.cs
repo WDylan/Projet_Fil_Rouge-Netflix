@@ -51,7 +51,16 @@ namespace APIAspNetCore.Models.DAO
         {
             Series serie = null;
             _connection = Connection.New;
-            _request = "SELECT ser.titre, ser"
+            _request = "SELECT ser.titre, ser.genre, ser.nbepisodes, ser.datesortie, ser.synopsis, ser.recommandation, ser.acteur_nom, ser.realisateur_nom, ser.image, ser.video" +
+                "FROM SERIES AS ser";
+            _command = new SqlCommand(_request, _connection);   
+            _connection.Open();
+
+            _reader = _command.ExecuteReader();
+            if (_reader.Read())
+            {
+                serie = new Series()
+            }
         }
 
         public override List<Series> Find(Func<Series, bool> criteria)
