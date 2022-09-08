@@ -1,5 +1,6 @@
 ﻿
 using API_Netflix_ASPNetCore.Models.DAO;
+using System.Numerics;
 
 namespace API_Netflix_ASPNetCore
 {
@@ -60,6 +61,11 @@ namespace API_Netflix_ASPNetCore
             return filmDAO.Create(this);
         }
 
+
+        public virtual Films RechercherFilm(int index)
+        {
+            return filmDAO.Find(index);
+        }
 
         public override string ToString()
         {
