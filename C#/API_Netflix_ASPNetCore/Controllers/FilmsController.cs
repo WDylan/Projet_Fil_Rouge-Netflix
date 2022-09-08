@@ -28,36 +28,46 @@ namespace API_Netflix_ASPNetCore.Controllers
         }
 
         // GET: api/<FilmsController>/5
-        [HttpGet("{idfilm}")]
+        [HttpGet("{id}")]
         public Films Get(int id)
         {
             Films film = new();
-            film = film.Get(id).Item2;
-            return film;
+            film = film.Get(id);
+            if (film != null)
+            {
+                return film;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         // POST: api/<FilmsController>/
-        [HttpPost]
-        public IActionResult Post([FromBody] Films film)
-        {
-            //film.Add();
-            return Ok(new { message = "Film ajouté !", Film = film });
-        }
+        //[HttpPost]
+        //public IActionResult Post([FromBody] Films film)
+        //{
+        //    film.Add();
+        //    return Ok(new { message = "Film ajouté !", Film = film });
+        //}
 
         // PUT api/<FilmsController>/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Films film)
-        {
-            film.IdFilm = id;
-            return Ok(new { message = "Film Modifié", Film = film });
-        }
+        //[HttpPut("{id}")]
+        //public IActionResult Put(int id, [FromBody] Films film)
+        //{
+        //    id = film.IdFilm;
+        //    return Ok(new { message = "Film Modifié", Film = film });
+        //}
 
         // DELETE api/<FilmsController>/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            return Ok(new { message = "Film supprimé", Id = id });
-        }
-  
+        //[HttpDelete("{id}")]
+        //public IActionResult Delete(int id)
+        //{
+        //    Films film = new();
+        //    film = film.Get(id);
+        //    film.Delete();
+        //    return Ok(new { message = "Film supprimé", Id = id });
+        //}
+
     }
 }

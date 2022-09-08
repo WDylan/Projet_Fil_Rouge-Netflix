@@ -28,7 +28,7 @@ namespace API_Netflix_ASPNetCore
 
         public Series()
         {
-
+            DateSortie = DateTime.Now;
         }
 
         public Series(int idSerie, string titre, string genre, int nbEpisodes, DateTime dateSortie, string synopsis, int recommandation, string realisateur_Nom, string acteur_Nom, string image, string video)
@@ -53,49 +53,14 @@ namespace API_Netflix_ASPNetCore
         public int NbEpisodes { get => nbEpisodes; set => nbEpisodes = value; }
         public DateTime DateSortie { get => dateSortie; set => dateSortie = value; }
         public string Synopsis { get => synopsis; set => synopsis = value; }
-        public int Recommandation { get => recommandation; set => recommandation = value; }
         public string Acteur_Nom { get => acteur_Nom; set => acteur_Nom = value; }
         public string Realisateur_Nom { get => realisateur_Nom; set => realisateur_Nom = value; }
+        public int Recommandation { get => recommandation; set => recommandation = value; }
         public string Image { get => image; set => image = value; }
         public string Video { get => video; set => video = value; }
         public static List<Series> Serie { get => serie; set => serie = value; }
 
         //private SeriesDAO serieDAO { get => new(); }
-
-        public (bool, Series) Get(int id)
-        {
-            Series serie = null;
-            bool found = false;
-            _connection = Connection.New;
-            _request = "SELECT ser.titre, ser.genre, ser.nbepisodes, ser.datesortie, ser.synopsis, ser.recommandation, ser.acteur_nom, ser.realisateur_nom, ser.image, ser.video" +
-                "FROM SERIES AS ser";
-            _command = new SqlCommand(_request, _connection);
-            _command.Parameters.Add(new SqlParameter("@Id", id));
-            _connection.Open();
-            _reader = _command.ExecuteReader();
-            if (_reader.Read())
-            {
-                serie = new Series()
-                {
-                    idSerie = _reader.GetInt32(0),
-                    Titre = _reader.GetString(1),
-                    Genre = _reader.GetString(2),
-                    NbEpisodes = _reader.GetInt32(3),
-                    DateSortie = _reader.GetDateTime(4),
-                    Synopsis = _reader.GetString(5),
-                    Recommandation = _reader.GetInt32(6),
-                    Acteur_Nom = _reader.GetString(7),
-                    Realisateur_Nom = _reader.GetString(8),
-                    Image = _reader.GetString(9),
-                    Video = _reader.GetString(10)
-                };
-                found = true;
-            }
-            _reader.Close();
-            _command.Dispose();
-            _connection.Close();
-            return (found, serie);
-        }
 
         public static List<Series> GetAll()
         {
@@ -117,9 +82,9 @@ namespace API_Netflix_ASPNetCore
                     NbEpisodes = reader.GetInt32(3),
                     DateSortie = reader.GetDateTime(4),
                     Synopsis = reader.GetString(5),
-                    Recommandation = reader.GetInt32(6),
-                    Acteur_Nom = reader.GetString(7),
-                    Realisateur_Nom = reader.GetString(8),
+                    Acteur_Nom = reader.GetString(6),
+                    Realisateur_Nom = reader.GetString(7),
+                    Recommandation = reader.GetInt32(8),
                     Image = reader.GetString(9),
                     Video = reader.GetString(10)
                 };
@@ -156,7 +121,7 @@ namespace API_Netflix_ASPNetCore
             _connection = Connection.New;
 
             // Prépartion de la commande
-            _request = "SELECT ser.titre, ser.genre, ser.nbepisodes, ser.datesortie, ser.synopsis, ser.recommandation, ser.acteur_nom, ser.realisateur_nom, ser.image, ser.video" +
+            _request = "SELECT titre, genre,nbepisodes, datesortie, synopsis, recommandation, acteur_nom, realisateur_nom, image, video" +
                 "OUTPUT INSERTED.ID VALUES (@Titre, @Genre, @NbEpisodes, @DateSortie, @Synopsis, @Recommandation, @Acteur_Nom, @Realisateur_Nom, @Image, @Video)";
 
             // Préparation de la commande

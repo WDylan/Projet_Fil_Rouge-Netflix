@@ -28,12 +28,12 @@ namespace API_Netflix_ASPNetCore.Controllers
 
         // GET: api/<SeriesController>/5
         [HttpGet("{idserie}")]
-        public Series Get(int id)
-        {
-            Series serie = new();
-            serie = serie.Get(id).Item2;
-            return serie;
-        }
+        //public Series Get(int id)
+        //{
+        //    //Series serie = new();
+        //    //serie = serie.Get(id).Item2;
+        //    //return serie;
+        //}
 
         // POST: api/<SeriesController>/
         [HttpPost]
@@ -47,7 +47,7 @@ namespace API_Netflix_ASPNetCore.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Series serie)
         {
-            serie.IdSerie = id;
+            id = serie.IdSerie;
             return Ok(new { message = "Série Modifiée", Serie = serie });
         }
 
