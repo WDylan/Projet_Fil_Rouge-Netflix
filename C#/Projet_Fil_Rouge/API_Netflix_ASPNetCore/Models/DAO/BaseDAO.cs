@@ -14,8 +14,8 @@ namespace API_Netflix_ASPNetCore.Models.DAO
         public abstract bool Delete(T element);
         public abstract bool Update(T element);
 
-        public abstract T Find(int index);
-        public abstract List<T> Find(Func<T, bool> criteria);
-        public abstract List<T> FindAll();
+        public abstract T Get(int index);
+        public abstract List<T> Get(Func<T, bool> criteria);
+        public abstract List<T> GetAll();
     }
 }

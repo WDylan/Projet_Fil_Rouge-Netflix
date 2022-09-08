@@ -64,7 +64,7 @@ namespace API_Netflix_ASPNetCore.Models.DAO
             throw new NotImplementedException();
         }
 
-        public override Series Find(int index)
+        public override Series Get(int index)
         {
             Series serie = null;
             // Création d'une instance de connection
@@ -109,10 +109,10 @@ namespace API_Netflix_ASPNetCore.Models.DAO
             return serie;
         }
 
-        public override List<Series> Find(Func<Series, bool> criteria)
+        public override List<Series> Get(Func<Series, bool> criteria)
         {
             List<Series> series = new List<Series>();
-            FindAll().ForEach(s =>
+            GetAll().ForEach(s =>
             {
                 if (criteria(s))
                 {
@@ -122,7 +122,7 @@ namespace API_Netflix_ASPNetCore.Models.DAO
             return series;
         }
 
-        public override List<Series> FindAll()
+        public override List<Series> GetAll()
         {
             List<Series> series = new();
             _connection = Connection.New;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using API_Netflix_ASPNetCore.Interface;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Netflix_ASPNetCore.Controllers
@@ -6,41 +7,63 @@ namespace API_Netflix_ASPNetCore.Controllers
     public class SeriesController : Controller
     {
         private IWebHostEnvironment _env;
-
         private IUpload _upload;
+
+        public SeriesController(IWebHostEnvironment env, IUpload upload)
+        {
+            _env = env;
+            _upload = upload;
+        }
 
 
         // GET: SeriesController
-        public ActionResult Index()
+        public ActionResult Index(string? search)
         {
-            return View();
+            List<Series> series = search == null ? Series.GetAll() : Series.SearchFilm(search);
+            return View(series);
         }
+
 
         // GET: SeriesController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Series serie = new();
+            serie = serie.Get(id).Item2;
+            return View(serie);
         }
 
         // GET: SeriesController/Create
-        public ActionResult Create()
+        public IActionResult Form(int ? id)
         {
-            return View();
+            Series serie = new();
+            if (id != null)
+            {
+                ViewData["title"] = "Serie modifiée";
+                serie = serie.Get((int)id).Item2;
+            }
+            else
+            {
+                ViewData["title"] = "Serie ajoutée";
+            }
+            return View(serie);
         }
 
         // POST: SeriesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult SubmitForm(Series serie, IFormFile avatar)
         {
-            try
+            if (serie.IdSerie > 0)
             {
-                return RedirectToAction(nameof(Index));
+                serie.Update();
             }
-            catch
+            else
             {
-                return View();
+                serie.Image = _upload.Upload(avatar);
+                serie.Add();
             }
+            //on peut faire une redirection vers l'action index
+            return RedirectToAction("Index", "Series");
         }
 
         // GET: SeriesController/Edit/5
@@ -64,25 +87,19 @@ namespace API_Netflix_ASPNetCore.Controllers
             }
         }
 
+        public IActionResult ConfirmDelete(int id)
+        {
+            Series serie = new();
+            serie = serie.Get(id).Item2;
+            return View(serie);
+        }
+
         // GET: SeriesController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: SeriesController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Series serie = new Series();
+            serie = serie.Get(id).Item2;
+            return View(serie != null ? serie.Delete():false);
         }
     }
 }
