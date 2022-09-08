@@ -1,4 +1,4 @@
-﻿using API_Netflix_ASPNetCore.Interface;
+﻿
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,7 +33,7 @@ namespace API_Netflix_ASPNetCore.Controllers
         }
 
         // GET: SeriesController/Create
-        public IActionResult Form(int ? id)
+        public IActionResult Form(int? id)
         {
             Series serie = new();
             if (id != null)
@@ -99,7 +99,7 @@ namespace API_Netflix_ASPNetCore.Controllers
         {
             Series serie = new Series();
             serie = serie.Get(id).Item2;
-            return View(serie != null ? serie.Delete():false);
+            return View(serie != null ? serie.Delete() : false);
         }
     }
 }

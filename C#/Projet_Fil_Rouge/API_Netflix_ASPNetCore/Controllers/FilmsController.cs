@@ -1,4 +1,4 @@
-﻿using API_Netflix_ASPNetCore.Interface;
+﻿
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -45,7 +45,7 @@ namespace API_Netflix_ASPNetCore.Controllers
         }
 
         // PUT api/<FilmsController>/5
-        [HttpPut("{id")]
+        [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Films film)
         {
             film.IdFilm = id;
