@@ -8,27 +8,27 @@ namespace API_Netflix_ASPNetCore.Controllers
     [ApiController]
     public class FilmsController : Controller
     {
-        private IWebHostEnvironment _env;
-        private IUpload _upload;
+        //private IWebHostEnvironment _env;
+        //private IUpload _upload;
 
-        public FilmsController(IWebHostEnvironment env, IUpload upload)
-        {
-            _env = env;
-            _upload = upload;
-        }
+        //public FilmsController(IWebHostEnvironment env, IUpload upload)
+        //{
+        //    _env = env;
+        //    _upload = upload;
+        //}
 
 
         // GET: api/<FilmsController>
         [HttpGet]
         public IEnumerable <Films> Get()
         {
-            List<Films> filmsList = new();
-            filmsList = Films.GetAll();
-            return filmsList;
+            List<Films> _filmsList = new();
+            _filmsList = Films.GetAll();
+            return _filmsList;
         }
 
         // GET: api/<FilmsController>/5
-        [HttpGet("{id}")]
+        [HttpGet("{idfilm}")]
         public Films Get(int id)
         {
             Films film = new();
@@ -45,7 +45,7 @@ namespace API_Netflix_ASPNetCore.Controllers
         }
 
         // PUT api/<FilmsController>/5
-        [HttpPut("{id")]
+        [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Films film)
         {
             film.IdFilm = id;

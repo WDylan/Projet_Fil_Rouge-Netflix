@@ -31,7 +31,7 @@ namespace API_Netflix_ASPNetCore
 
         }
 
-        public Series(string categ, int idSerie, string genre, string titre, int nbEpisodes, DateTime dateSortie, string synopsis, int recommandation, string realisateur_Nom, string acteur_Nom, string image, string video)
+        public Series(int idSerie, string titre, string genre, int nbEpisodes, DateTime dateSortie, string synopsis, int recommandation, string realisateur_Nom, string acteur_Nom, string image, string video)
         {
             IdSerie = idSerie;
             Titre = titre;
@@ -99,10 +99,9 @@ namespace API_Netflix_ASPNetCore
 
         public static List<Series> GetAll()
         {
-            List<Series > films = new List<Series>();
+            List<Series > series = new List<Series>();
             SqlConnection connection = Connection.New;
-            string request = "SELECT ser.titre, ser.genre, ser.nbepisodes, ser.datesortie, ser.synopsis, ser.recommandation, ser.acteur_nom, ser.realisateur_nom, ser.image, ser.video" +
-                "FROM SERIES AS ser";
+            string request = "SELECT * FROM SERIES";
 
             SqlCommand command = new SqlCommand(request, connection);
             connection.Open();
@@ -124,12 +123,12 @@ namespace API_Netflix_ASPNetCore
                     Image = reader.GetString(9),
                     Video = reader.GetString(10)
                 };
-                films.Add(s);
+                series.Add(s);
             }
             reader.Close();
             command.Dispose();
             connection.Close();
-            return films;
+            return series;
         }
 
         public static List<Series> Find(Func<Series, bool> criterie)
@@ -145,7 +144,7 @@ namespace API_Netflix_ASPNetCore
             return series;
         }
 
-        public static List<Series> SearchFilm(string search)
+        public static List<Series> SearchSerie(string search)
         {
             return Find(s => s.Titre.Contains(search) || s.Acteur_Nom.Contains(search) || s.Realisateur_Nom.Contains(search) || s.Genre.Contains(search));
         }

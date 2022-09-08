@@ -4,102 +4,58 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API_Netflix_ASPNetCore.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class SeriesController : Controller
     {
-        private IWebHostEnvironment _env;
-        private IUpload _upload;
+        //private IWebHostEnvironment _env;
+        //private IUpload _upload;
 
-        public SeriesController(IWebHostEnvironment env, IUpload upload)
+        //public SeriesController(IWebHostEnvironment env, IUpload upload)
+        //{
+        //    _env = env;
+        //    _upload = upload;
+        //}
+
+        // GET: api/<SeriesController>
+        [HttpGet]
+        public IEnumerable<Series> Get()
         {
-            _env = env;
-            _upload = upload;
+            List<Series> seriesList = new();
+            seriesList = Series.GetAll();
+            return seriesList;
         }
 
-
-        // GET: SeriesController
-        public ActionResult Index(string? search)
-        {
-            List<Series> series = search == null ? Series.GetAll() : Series.SearchFilm(search);
-            return View(series);
-        }
-
-
-        // GET: SeriesController/Details/5
-        public ActionResult Details(int id)
+        // GET: api/<SeriesController>/5
+        [HttpGet("{idserie}")]
+        public Series Get(int id)
         {
             Series serie = new();
             serie = serie.Get(id).Item2;
-            return View(serie);
+            return serie;
         }
 
-        // GET: SeriesController/Create
-        public IActionResult Form(int ? id)
-        {
-            Series serie = new();
-            if (id != null)
-            {
-                ViewData["title"] = "Serie modifiée";
-                serie = serie.Get((int)id).Item2;
-            }
-            else
-            {
-                ViewData["title"] = "Serie ajoutée";
-            }
-            return View(serie);
-        }
-
-        // POST: SeriesController/Create
+        // POST: api/<SeriesController>/
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult SubmitForm(Series serie, IFormFile avatar)
+        public IActionResult Post([FromBody] Series serie)
         {
-            if (serie.IdSerie > 0)
-            {
-                serie.Update();
-            }
-            else
-            {
-                serie.Image = _upload.Upload(avatar);
-                serie.Add();
-            }
-            //on peut faire une redirection vers l'action index
-            return RedirectToAction("Index", "Series");
+            //serie.Add();
+            return Ok(new { message = "Série ajoutée !", Serie = serie });
         }
 
-        // GET: SeriesController/Edit/5
-        public ActionResult Edit(int id)
+        // PUT api/<SeriesController>/5
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Series serie)
         {
-            return View();
+            serie.IdSerie = id;
+            return Ok(new { message = "Série Modifiée", Serie = serie });
         }
 
-        // POST: SeriesController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // DELETE api/<SeriesController>/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        public IActionResult ConfirmDelete(int id)
-        {
-            Series serie = new();
-            serie = serie.Get(id).Item2;
-            return View(serie);
-        }
-
-        // GET: SeriesController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            Series serie = new Series();
-            serie = serie.Get(id).Item2;
-            return View(serie != null ? serie.Delete():false);
+            return Ok(new { message = "Série supprimée", Id = id });
         }
     }
 }

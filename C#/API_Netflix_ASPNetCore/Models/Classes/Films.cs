@@ -31,7 +31,7 @@ namespace API_Netflix_ASPNetCore
 
         }
 
-        public Films(string categ, int idFilm, string genre, string titre, int duree, DateTime dateSortie, string synopsis, int recommandation, string realisateur_Nom, string acteur_Nom, string image, string video)
+        public Films(int idFilm, string titre, string genre, int duree, DateTime dateSortie, string synopsis, int recommandation, string realisateur_Nom, string acteur_Nom, string image, string video)
         {
             IdFilm = idFilm;
             Titre = titre;
@@ -104,8 +104,7 @@ namespace API_Netflix_ASPNetCore
         {
             List<Films> films = new List<Films>();
             SqlConnection connection = Connection.New;
-            string request = "SELECT fil.titre, fil.genre, fil.dure, fil.datesortie, fil.synopsis, fil.recommandation, fil.acteur_nom, fil.realisateur_nom, fil.image, fil.video" +
-                "FROM FILMS AS fil";
+            string request = "SELECT * FROM FILMS";
 
             SqlCommand command = new SqlCommand(request, connection);
             connection.Open();
