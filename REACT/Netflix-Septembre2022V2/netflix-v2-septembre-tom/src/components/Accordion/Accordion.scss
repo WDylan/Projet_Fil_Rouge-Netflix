@@ -1,23 +1,31 @@
+// .accordions {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   width: 100%;
+//   margin-top: 28px;
+//   color: fuchsia;
+// }
+
 .accordions {
-  width: 80%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-wrap: nowrap;
+  justify-content: center;
+  color: white;  
+  width: 63%;
   margin-left: 285px;
   margin-top: 30px;
-  color: white
+  margin-bottom: -4px;
 }
 
-.accordion_title{
+.accordion_title {
   color: white;
-  display: flex;
-  align-self: center;
-  justify-content: space-between;
+  position: relative;
   background: rgb(56, 55, 55);
   padding: 1rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: -19px;
 }
 
 .accordion_title:hover,
@@ -25,13 +33,91 @@
   cursor: pointer;
 }
 
-.accordion_icon{
-  position: relative;
-  margin-top: 10px;
-  width: 10px;
-  height: 1px;
-  background: white;
+.accordion_icon {
+  position: static;
+  margin-top: -25px;  
+  background: rgb(56, 55, 55);
+  margin-left: 380px;
+  margin-bottom: 5px;
 }
+
+
+.accordion_body {
+  display: flex;
+  justify-content: center;
+  background: rgb(56, 55, 55);
+  padding: 1rem;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  font-weight: normal;
+  font-size: larger;
+}
+
+.title_style {
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .accordions {
+//   width: 63%;
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   margin-left: 285px;
+//   margin-top: 30px;
+//   margin-bottom: -35px;
+//   color: white;  
+// }
+
+// .accordion_title{
+//   color: white;
+//   display: flex;
+//   align-self: center;
+//   justify-content: space-between;
+//   background: rgb(56, 55, 55);
+//   padding: 1rem;
+//   font-weight: bold;
+//   margin-bottom: 10px;
+// }
+
+// .accordion_title:hover,
+// .active .accordion_title {
+//   cursor: pointer;
+// }
+
+// .accordion_icon{
+//   position: relative;
+//   margin-top: 10px;
+//   width: 10px;
+//   height: 1px;
+//   background: white;
+// }
 
 // .accordion_icon::before{
 //   position: absolute;
@@ -48,138 +134,13 @@
 //   opacity: 0;
 // }
 
-.accordion_body{
-  visibility: collapse;
-  display: flex;
-  justify-content: center;
-  height: 0;
-  opacity: 1;
-  overflow: hidden;
-  padding: 0 1rem;
-  transition: all .2s ease-in;
-}
-
-
-.App {
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  flex-direction: column;
-  gap: 20px;
-}
-// .accordion_icon {
-//   font-size: 25px;
+// .accordion_body{
+//   position: relative;
+//   width: 34%;
+//   margin-left: 249px;
+//   background-color: rgb(56, 55, 55);
+//   padding: 0 1rem;
+//   transition: all .2s ease-in;
+//   margin-top: -9px;
+//   margin-bottom: 10px;
 // }
-.accordion {
-  width: 300px;
-  border: 1px solid rgb(133, 133, 133);
-}
-.accordion_title {
-  font-weight: 600;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 15px;
-  border: 2px solid rgb(133, 133, 133);
-  background-color: rgb(255, 143, 143);
-}
-// .accordion-body {
-//   padding: 15px 5px;
-//  margin-left: 29%;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .accordion-parent {
-//     position: relative;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     height: 50vh; // 50vh = 50% de l'écran en hauteur
-//     font-size: 0.9rem;
-//     padding-bottom: 3rem;
-//     color: #fff;
-//     background-color: rgb(00, 00, 00);
-// }
-//     /* Style the buttons that are used to open and close the accordion panel */
-//     .accordion {
-//         background-color: rgb(84,84,84);
-//         color: white;
-//         font-weight: 500;
-//         cursor: pointer;
-//         padding: 18px;
-//         width: 100%;
-//         border: none;
-//         text-align: left;
-//         outline: none;
-//         font-size: 15px;
-//         transition: 0.4s;
-//         margin-bottom: 5px;
-//       }
-
-//   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-//   .active, .accordion:hover {
-//     background-color: #ccc; 
-//   }
-
-//   /* Style the accordion panel. Note: hidden by default */
-//   .panel {
-//     padding: 0 18px;
-//     display: none;
-//     background-color: fuchsia;
-//     overflow: hidden;
-//   }
-
-//   .panel {
-//     padding: 0 18px;
-//     background-color: white;
-//     max-height: 0;
-//     overflow: hidden;
-//     transition: max-height 0.2s ease-out;
-//   }
-
-//   .accordion:after {
-//     content: '\02795'; /* Unicode character for "plus" sign (+) */
-//     font-size: 13px;
-//     color: white;
-//     float: right;
-//     margin-left: 5px;
-//   }
-
-//   .active:after {
-//     content: "\2796"; /* Unicode character for "minus" sign (-) */
-//   }

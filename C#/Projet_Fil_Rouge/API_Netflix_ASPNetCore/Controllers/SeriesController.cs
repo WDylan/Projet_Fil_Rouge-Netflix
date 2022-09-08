@@ -1,4 +1,4 @@
-﻿using API_Netflix_ASPNetCore.Interface;
+﻿//using API_Netflix_ASPNetCore.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,14 +6,14 @@ namespace API_Netflix_ASPNetCore.Controllers
 {
     public class SeriesController : Controller
     {
-        private IWebHostEnvironment _env;
-        private IUpload _upload;
+        //private IWebHostEnvironment _env;
+        //private IUpload _upload;
 
-        public SeriesController(IWebHostEnvironment env, IUpload upload)
-        {
-            _env = env;
-            _upload = upload;
-        }
+        //public SeriesController(IWebHostEnvironment env, IUpload upload)
+        //{
+        //    _env = env;
+        //    _upload = upload;
+        //}
 
 
         // GET: SeriesController
@@ -59,7 +59,7 @@ namespace API_Netflix_ASPNetCore.Controllers
             }
             else
             {
-                serie.Image = _upload.Upload(avatar);
+                //serie.Image = _upload.Upload(avatar);
                 serie.Add();
             }
             //on peut faire une redirection vers l'action index

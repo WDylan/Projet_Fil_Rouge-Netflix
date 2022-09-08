@@ -1,4 +1,4 @@
-﻿using API_Netflix_ASPNetCore.Interface;
+﻿//using API_Netflix_ASPNetCore.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -8,14 +8,14 @@ namespace API_Netflix_ASPNetCore.Controllers
     [ApiController]
     public class FilmsController : Controller
     {
-        private IWebHostEnvironment _env;
-        private IUpload _upload;
+        //private IWebHostEnvironment _env;
+        //private IUpload _upload;
 
-        public FilmsController(IWebHostEnvironment env, IUpload upload)
-        {
-            _env = env;
-            _upload = upload;
-        }
+        //public FilmsController(IWebHostEnvironment env, IUpload upload)
+        //{
+        //    _env = env;
+        //    _upload = upload;
+        //}
 
 
         // GET: api/<FilmsController>
@@ -45,7 +45,7 @@ namespace API_Netflix_ASPNetCore.Controllers
         }
 
         // PUT api/<FilmsController>/5
-        [HttpPut("{id")]
+        [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Films film)
         {
             film.IdFilm = id;

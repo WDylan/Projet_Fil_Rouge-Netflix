@@ -8,6 +8,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 function Footer() {
   return (
     <footer className='footer'>
+        <div className='separation'> </div>
         <div className="container">
             <div className="footer_socials">
                 <a href="https://fr-fr.facebook.com/netflixfrance/" className="footer_social">

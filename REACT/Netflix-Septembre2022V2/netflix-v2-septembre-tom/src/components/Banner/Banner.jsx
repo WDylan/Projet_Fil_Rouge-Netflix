@@ -1,7 +1,5 @@
 import React from 'react';
 import "./Banner.scss";
-import requests from '../../config/Requests';
-import axios from "axios";
 
 function Banner() {
 
@@ -23,8 +21,8 @@ function Banner() {
                 <span className='_span_2'> Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</span>
 
                 <form className='email_input'>
-                    <input placeholder='Adresse e-mail'></input>
-                    <button className='start_button'>Commencer</button>
+                    <input placeholder='Adresse e-mail' className='email'></input>
+                    <button className='email_button'>Commencer</button>
                 </form>
             </div>
         </header>

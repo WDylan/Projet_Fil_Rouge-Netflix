@@ -8,37 +8,13 @@ body {
   background-color: #111;
 }
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  outline: none;
-}
-
-h1,
-p {
-  margin-bottom: 1rem;
-
-  @media screen and (min-width:768px) {
-    margin-bottom: 1.5rem;
-
-  }
-
-}
 
 button {
   background-color: none;
   border: none;
 }
 
-.test {
-  width: 100px;
-  height: 50vh;
-}
-
-.FAQ_title{
+.FAQ_title {
   color: white;
   font-weight: bold;
   font-size: 250%;
@@ -46,4 +22,46 @@ button {
   align-items: center;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: -30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *,
+// ::before,
+// ::after {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+//   outline: none;
+// }
+
+// h1,
+// p {
+//   margin-bottom: 1rem;
+
+//   @media screen and (min-width:768px) {
+//     margin-bottom: 1.5rem;
+
+//   }
+
+// }
+
+
+// .test {
+//   width: 100px;
+//   height: 50vh;
+// }
