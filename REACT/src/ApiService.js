@@ -71,8 +71,8 @@ export const updateFilmsApi = (async (Films) => {
     return Content;
 });
 
-export const deleteFilmsApi = (async (FilmsId) => {
-    const rawResponse = await fetch(_BASE_URL + '/films/' + FilmsId, {
+export const deleteFilmsApi = (async (IdFilm) => {
+    const rawResponse = await fetch(_BASE_URL + '/films/' + IdFilm, {
         method: 'DELETE',
         headers: _HEADERS
     });
@@ -158,3 +158,66 @@ export const deleteSeriesApi = (async (IdSerie) => {
     return Content;
 });
 
+// Méthode Utilisateurs
+export const getUsersApi = async () => {
+    const reponse = await fetch(_BASE_URL + "/utilisateurs")
+        .then((res) =>
+            res.json()
+        )
+    return reponse.data
+}
+
+export const searchUsersApi = async (IdUtilisateur) => {
+    const reponse = await fetch(_BASE_URL + '/utilisateurs' + IdUtilisateur)
+        .then((res) =>
+            res.json()
+        );
+    return reponse.data;
+}
+
+export const postUserssApi = (async (Utilisateurs) => {
+    alert(`Nom : ${Utilisateurs.Nom} - Prénom : ${Utilisateurs.Prenom} - Email : ${Utilisateurs.Email} minutes - Mot de passe : ${Utilisateurs.MotDePasse} </br>
+    Role : ${Utilisateurs.Statut}`);
+    const rawResponse = await fetch(_BASE_URL + '/utilisateurs', {
+        method: 'POST',
+        headers: _HEADERS,
+        body: JSON.stringify({
+            nom: Utilisateurs.nom,
+            prenom: Utilisateurs.prenom,
+            email: Utilisateurs.email,
+            motdepasse: Utilisateurs.motdepasse,
+            statut: Utilisateurs.statut,  
+        })
+    })
+    const Content = await rawResponse.json();
+    console.log("POST Response : " + Content);
+    return Content;
+});
+
+
+export const updateUsersApi = (async (Utilisateurs) => {
+    const rawResponse = await fetch(_BASE_URL + '/utilisateurs/' + Utilisateurs.IdUtilisateur, {
+        method: 'PUT',
+        headers: _HEADERS,
+        body: JSON.stringify({
+            nom: Utilisateurs.nom,
+            prenom: Utilisateurs.prenom,
+            email: Utilisateurs.email,
+            motdepasse: Utilisateurs.motdepasse,
+            statut: Utilisateurs.statut,       
+        })
+    })
+    const Content = await rawResponse.json();
+    console.log("UPDATE Response : " + Content);
+    return Content;
+});
+
+export const deleteUsersApi = (async (IdUtilisateur) => {
+    const rawResponse = await fetch(_BASE_URL + '/utilisateurs/' + IdUtilisateur, {
+        method: 'DELETE',
+        headers: _HEADERS
+    });
+    const Content = await rawResponse.json();
+    console.log("DELETE Response : " + Content);
+    return Content;
+});

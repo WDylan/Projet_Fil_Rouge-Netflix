@@ -8,18 +8,19 @@ import {
 import HomeScreen from './Views/HomeScreen/HomeScreen';
 import LoginScreen from './Views/SignInView/LoginScreen'
 import { Home } from '@mui/icons-material';
-import Catalogue from './Views/HomeScreenListView/HomeScreenListView';
-// import FAQ from './Views/FAQ/Faq'
-// import Login from './Views/SignInView/SignIn';
+import FilmsList from './Views/HomeScreenListView/FilmsList';
+import SeriesList from './Views/HomeScreenListView/SeriesList';
+import Rooter from './config/Rooters/Routers';
+
 
 function App() {
   const user = null;
-//   { 
-// name : "test",
-//   };
+  //   { 
+  // name : "test",
+  //   };
   return (
     <div className='app'>
-        <Catalogue/>
+<Rooter/>
     </div>
   );
 }
