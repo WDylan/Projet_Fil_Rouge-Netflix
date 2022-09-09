@@ -62,6 +62,44 @@ namespace API_Netflix_ASPNetCore
 
         //private SeriesDAO serieDAO { get => new(); }
 
+
+        public static Series Get(int id)
+        {
+            Series serie = null;
+            SqlConnection _connection = Connection.New;
+
+            string _request = "SELECT * FROM SERIES WHERE idserie =@IdSerie";
+
+            SqlCommand _command = new SqlCommand(_request, _connection);
+
+            _command.Parameters.Add(new SqlParameter("@IdSerie", id));
+
+            _connection.Open();
+
+            SqlDataReader _reader = _command.ExecuteReader();
+
+            if (_reader.Read())
+            {
+                serie = new Series()
+                {
+                    IdSerie = _reader.GetInt32(0),
+                    Titre = _reader.GetString(1),
+                    Genre = _reader.GetString(2),
+                    NbEpisodes = _reader.GetInt32(3),
+                    DateSortie = _reader.GetDateTime(4),
+                    Synopsis = _reader.GetString(5),
+                    Acteur_Nom = _reader.GetString(6),
+                    Realisateur_Nom = _reader.GetString(7),
+                    Recommandation = _reader.GetInt32(8),
+                    Image = _reader.GetString(9),
+                    Video = _reader.GetString(10)
+                };
+            }
+            _reader.Close();
+            _command.Dispose();
+            _connection.Close();
+            return serie;
+        }
         public static List<Series> GetAll()
         {
             List<Series > series = new List<Series>();
@@ -121,8 +159,8 @@ namespace API_Netflix_ASPNetCore
             _connection = Connection.New;
 
             // Prépartion de la commande
-            _request = "SELECT titre, genre,nbepisodes, datesortie, synopsis, recommandation, acteur_nom, realisateur_nom, image, video" +
-                "OUTPUT INSERTED.ID VALUES (@Titre, @Genre, @NbEpisodes, @DateSortie, @Synopsis, @Recommandation, @Acteur_Nom, @Realisateur_Nom, @Image, @Video)";
+            _request = "INSERT INTO SERIES (titre, genre, nbepisodes, datesortie, synopsis, acteur_nom, realisateur_nom, recommandation, image, video)" +
+                "OUTPUT INSERTED.IDSERIE VALUES (@Titre, @Genre, @NbEpisodes, @DateSortie, @Synopsis, @Acteur_Nom, @Realisateur_Nom, @Recommandation,  @Image, @Video)";
 
             // Préparation de la commande
             _command = new SqlCommand(_request, _connection);
@@ -139,7 +177,7 @@ namespace API_Netflix_ASPNetCore
             _command.Parameters.Add(new SqlParameter("@Video", Video));
 
             // Execution de la commande
-
+            _connection.Open();
             int Id = (int)_command.ExecuteScalar();
 
             // Libération de l'objet command
@@ -156,6 +194,8 @@ namespace API_Netflix_ASPNetCore
             _request = "UPDATE SERIES SET titre=@Titre, genre=@Genre, nbepisodes=@NbEpisodes, dateSortie=@DateSortie, synopsis=@Synopsis, recommandation = @recommandation, acteur_nom = @Acteur_Nom, realisateur_nom = @Realisateur_Nom, image = @Image, video=@Video" +
                 " WHERE idserie = @IdSerie";
             _command = new SqlCommand(_request, _connection);
+
+            _command.Parameters.Add(new SqlParameter("@IdSerie", IdSerie));
             _command.Parameters.Add(new SqlParameter("@Titre", Titre));
             _command.Parameters.Add(new SqlParameter("@Genre", Genre));
             _command.Parameters.Add(new SqlParameter("@NbEpisodes", NbEpisodes));
@@ -179,7 +219,7 @@ namespace API_Netflix_ASPNetCore
             // Création d'une instance de connection
             _connection = Connection.New;
             // Préparation de la command
-            _request = "DELETE SERIES WHERE id=@IdSerie";
+            _request = "DELETE SERIES WHERE idserie=@IdSerie";
             _command = new SqlCommand(_request, _connection);
 
             // Ajout des paramètres de la command

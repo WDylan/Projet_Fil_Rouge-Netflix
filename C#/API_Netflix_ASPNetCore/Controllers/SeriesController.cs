@@ -27,19 +27,19 @@ namespace API_Netflix_ASPNetCore.Controllers
         }
 
         // GET: api/<SeriesController>/5
-        [HttpGet("{idserie}")]
-        //public Series Get(int id)
-        //{
-        //    //Series serie = new();
-        //    //serie = serie.Get(id).Item2;
-        //    //return serie;
-        //}
+        [HttpGet("{id}")]
+        public Series Get(int id)
+        {
+            Series serie = new();
+            serie = Series.Get(id);
+            return serie;
+        }
 
         // POST: api/<SeriesController>/
         [HttpPost]
         public IActionResult Post([FromBody] Series serie)
         {
-            //serie.Add();
+            serie.Add();
             return Ok(new { message = "Série ajoutée !", Serie = serie });
         }
 
@@ -47,7 +47,9 @@ namespace API_Netflix_ASPNetCore.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Series serie)
         {
-            id = serie.IdSerie;
+            Series serie2 = new Series();
+            serie = serie;
+            serie.Update();
             return Ok(new { message = "Série Modifiée", Serie = serie });
         }
 
@@ -55,6 +57,9 @@ namespace API_Netflix_ASPNetCore.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            Series serie = new();
+            serie = Series.Get(id);
+            serie.Delete();
             return Ok(new { message = "Série supprimée", Id = id });
         }
     }

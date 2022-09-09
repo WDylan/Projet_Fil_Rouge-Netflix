@@ -65,22 +65,20 @@ namespace API_Netflix_ASPNetCore
 
 
 
-        public Films Get(int id)
+        public static Films Get(int id)
         {
             Films film = null;
+            SqlConnection _connection = Connection.New;
 
-            _connection = Connection.New;
+            string _request = "SELECT * FROM FILMS WHERE idfilm =@IdFilm";
 
-            _request = "SELECT * FROM FILMS" +
-                "WHERE id =@Id";
-
-            _command = new SqlCommand(_request, _connection);
+            SqlCommand _command = new SqlCommand(_request, _connection);
 
             _command.Parameters.Add(new SqlParameter("@IdFilm", id));
 
             _connection.Open();
 
-            _reader = _command.ExecuteReader();
+            SqlDataReader _reader = _command.ExecuteReader();
 
             if (_reader.Read())
             {
@@ -164,7 +162,7 @@ namespace API_Netflix_ASPNetCore
 
             // Prépartion de la commande
             _request = "INSERT INTO FILMS (titre, genre, duree, datesortie, synopsis, acteur_nom, realisateur_nom, recommandation, image, video)" +
-                "OUTPUT INSERTED.ID VALUES (@Titre, @Genre, @Duree, @DateSortie, @Synopsis, @Acteur_Nom, @Realisateur_Nom, @Recommandation,  @Image, @Video)";
+                "OUTPUT INSERTED.IDFILM VALUES (@Titre, @Genre, @Duree, @DateSortie, @Synopsis, @Acteur_Nom, @Realisateur_Nom, @Recommandation,  @Image, @Video)";
 
             // Préparation de la commande
             _command = new SqlCommand(_request, _connection);
@@ -195,8 +193,10 @@ namespace API_Netflix_ASPNetCore
         public virtual bool Update()
         {
             _connection = Connection.New;
-            _request = "UPDATE FILMS SET titre=@Titre, genre=@Genre, duree=@Duree, dateSortie=@DateSortie, synopsis=@Synopsis, acteur_nom = @Acteur_Nom, realisateur_nom = @Realisateur_Nom, recommandation = @recommandation, image = @Image, video=@Video";
+            _request = "UPDATE FILMS SET titre=@Titre, genre=@Genre, duree=@Duree, dateSortie=@DateSortie, synopsis=@Synopsis, acteur_nom = @Acteur_Nom, realisateur_nom = @Realisateur_Nom, recommandation = @recommandation, image = @Image, video=@Video WHERE idfilm = @IdFilm";
             _command = new SqlCommand(_request, _connection);
+
+            _command.Parameters.Add(new SqlParameter("@IdFilm", IdFilm));
             _command.Parameters.Add(new SqlParameter("@Titre", Titre));
             _command.Parameters.Add(new SqlParameter("@Genre", Genre));
             _command.Parameters.Add(new SqlParameter("@Duree", Duree));
@@ -215,12 +215,12 @@ namespace API_Netflix_ASPNetCore
             return nbLignes > 0;
         }
 
-        public virtual bool Delete()
+        public  bool Delete()
         {
             // Création d'une instance de connection
             _connection = Connection.New;
             // Préparation de la command
-            _request = "DELETE FILMS WHERE id=@IdFilm";
+            _request = "DELETE FILMS WHERE idfilm=@IdFilm";
             _command = new SqlCommand(_request, _connection);
 
             // Ajout des paramètres de la command

@@ -20,54 +20,50 @@ namespace API_Netflix_ASPNetCore.Controllers
 
         // GET: api/<FilmsController>
         [HttpGet]
-        public IEnumerable <Films> Get()
+        public IEnumerable<Films> Get()
         {
+            
             List<Films> _filmsList = new();
             _filmsList = Films.GetAll();
             return _filmsList;
         }
 
-        // GET: api/<FilmsController>/5
+        //GET: api/<FilmsController>/5
         [HttpGet("{id}")]
         public Films Get(int id)
         {
             Films film = new();
-            film = film.Get(id);
-            if (film != null)
-            {
-                return film;
-            }
-            else
-            {
-                return null;
-            }
+            film = Films.Get(id);
+            return film;
         }
 
         // POST: api/<FilmsController>/
-        //[HttpPost]
-        //public IActionResult Post([FromBody] Films film)
-        //{
-        //    film.Add();
-        //    return Ok(new { message = "Film ajouté !", Film = film });
-        //}
+        [HttpPost]
+        public IActionResult Post([FromBody] Films film)
+        {
+            film.Add();
+            return Ok(new { message = "Film ajouté !", Film = film });
+        }
 
         // PUT api/<FilmsController>/5
-        //[HttpPut("{id}")]
-        //public IActionResult Put(int id, [FromBody] Films film)
-        //{
-        //    id = film.IdFilm;
-        //    return Ok(new { message = "Film Modifié", Film = film });
-        //}
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Films film)
+        {
+            Films film2 = new Films();
+            film2 = film;
+            film.Update();
+            return Ok(new { message = "Film Modifié", Film = film });
+        }
 
         // DELETE api/<FilmsController>/5
-        //[HttpDelete("{id}")]
-        //public IActionResult Delete(int id)
-        //{
-        //    Films film = new();
-        //    film = film.Get(id);
-        //    film.Delete();
-        //    return Ok(new { message = "Film supprimé", Id = id });
-        //}
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            Films film = new();
+            film = Films.Get(id);
+            film.Delete();
+            return Ok(new { message = "Film supprimé", Id = id });
+        }
 
     }
 }
