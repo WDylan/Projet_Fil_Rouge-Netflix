@@ -8,6 +8,7 @@ import {
 import HomeScreen from './Views/HomeScreen/HomeScreen';
 import LoginScreen from './Views/SignInView/LoginScreen'
 import { Home } from '@mui/icons-material';
+import Catalogue from './Views/HomeScreenListView/HomeScreenListView';
 // import FAQ from './Views/FAQ/Faq'
 // import Login from './Views/SignInView/SignIn';
 
@@ -18,15 +19,7 @@ function App() {
 //   };
   return (
     <div className='app'>
-      <BrowserRouter>
-        {!user ? (
-          <LoginScreen />
-        ) : (
-          <Routes>
-            <Route path="/Home" element={<HomeScreen/>}/>
-          </Routes>
-        )}
-      </BrowserRouter>
+        <Catalogue/>
     </div>
   );
 }
