@@ -1,0 +1,56 @@
+.footer {
+    color: grey;
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+    margin-top: 20px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .container {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    &_socials {
+        margin-left: -0.2rem;
+        padding: 1rem 0;
+
+        .footer_social {
+            margin-right: 1.1rem;
+
+            svg {
+                font-size: 2.2rem;
+            }
+        }
+
+    }
+
+    &_links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+
+        .footer_link {
+            flex: 1 0 25%;
+            margin-bottom: 1.1rem;
+
+            @media screen and (min-width: 768px) {
+                flex: 1 0 50%;
+            }
+        }
+    }
+
+    &_copy{
+        font-weight: bold;
+        color: rgb(106, 8, 93);
+    }
+
+}
+
+.separation{
+    background-color: rgb(56, 55, 55);
+    height: 5px;
+}

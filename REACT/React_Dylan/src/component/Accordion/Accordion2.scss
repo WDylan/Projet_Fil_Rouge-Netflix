@@ -1,0 +1,146 @@
+// .accordions {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   width: 100%;
+//   margin-top: 28px;
+//   color: fuchsia;
+// }
+
+.accordions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  color: white;  
+  width: 63%;
+  margin-left: 285px;
+  margin-top: 30px;
+  margin-bottom: -4px;
+}
+
+.accordion_title {
+  color: white;
+  position: relative;
+  background: rgb(56, 55, 55);
+  padding: 1rem;
+  font-weight: bold;
+  margin-bottom: -19px;
+}
+
+.accordion_title:hover,
+.active .accordion_title {
+  cursor: pointer;
+}
+
+.accordion_icon {
+  position: static;
+  margin-top: -25px;  
+  background: rgb(56, 55, 55);
+  margin-left: 380px;
+  margin-bottom: 5px;
+}
+
+
+.accordion_body {
+  display: flex;
+  justify-content: center;
+  background: rgb(56, 55, 55);
+  padding: 1rem;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  font-weight: normal;
+  font-size: larger;
+}
+
+.title_style {
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .accordions {
+//   width: 63%;
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   margin-left: 285px;
+//   margin-top: 30px;
+//   margin-bottom: -35px;
+//   color: white;  
+// }
+
+// .accordion_title{
+//   color: white;
+//   display: flex;
+//   align-self: center;
+//   justify-content: space-between;
+//   background: rgb(56, 55, 55);
+//   padding: 1rem;
+//   font-weight: bold;
+//   margin-bottom: 10px;
+// }
+
+// .accordion_title:hover,
+// .active .accordion_title {
+//   cursor: pointer;
+// }
+
+// .accordion_icon{
+//   position: relative;
+//   margin-top: 10px;
+//   width: 10px;
+//   height: 1px;
+//   background: white;
+// }
+
+// .accordion_icon::before{
+//   position: absolute;
+//   content: "";
+//   width: 10px;
+//   height: 1px;
+//   background: white ;
+//   transform: rotate(90deg);
+//   transition: all .2s;
+// }
+
+// .active .accordion_icon::before{
+//   transform: rotate(0deg);
+//   opacity: 0;
+// }
+
+// .accordion_body{
+//   position: relative;
+//   width: 34%;
+//   margin-left: 249px;
+//   background-color: rgb(56, 55, 55);
+//   padding: 0 1rem;
+//   transition: all .2s ease-in;
+//   margin-top: -9px;
+//   margin-bottom: 10px;
+// }

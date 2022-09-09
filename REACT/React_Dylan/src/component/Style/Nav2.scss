@@ -1,0 +1,52 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    padding: 12px 4%;
+    font-size: 0.9rem;
+    color: #FFF;
+    background: linear-gradient(to bottom, rgba(74,74,74, 0.6), rgba(0,0,0,0));
+    transition: background-color .3s ease-in-out;
+
+    a {
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    &-black {
+        background-color: #000;
+    }
+
+    &_logo {        
+        max-width: 130px;
+        margin-top: 1%;
+    }
+
+    &_actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 5;
+        .nav_action{
+            margin-left: 10px;
+            @media screen and (min-width:768px) {
+                margin-left: 20px;
+            }
+        }
+        .btn{
+            color: white;
+            background-color: red;
+            font-size: 1.1rem;
+            padding: 0.4rem 1.3rem;
+            border-radius: 5%;
+            width: 130px;
+            margin-top: 900%;
+            margin-left: -250px;
+        }
+        
+    }
+}
