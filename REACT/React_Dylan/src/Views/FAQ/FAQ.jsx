@@ -37,6 +37,7 @@ function FAQ() {
       ? [<br key={`br-${index}`} />, <Fragment key={index}>{line}</Fragment>]
       : [line]
   );
+  
   return (
     <div className="FAQ">
       <Nav />
