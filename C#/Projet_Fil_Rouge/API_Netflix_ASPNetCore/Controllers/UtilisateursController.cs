@@ -4,89 +4,66 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API_Netflix_ASPNetCore.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class UtilisateursController : Controller
     {
-        [Route("api/[controller]")]
-        [ApiController]
-        // GET: api/<FilmsController>
-        [HttpGet]
-        //public IEnumerable<Utilisateurs> Get()
+        //private IWebHostEnvironment _env;
+        //private IUpload _upload;
+
+        //public UtilisateursController(IWebHostEnvironment env, IUpload upload)
         //{
-        //    List<Utilisateurs> utilisateursList = new();
-        //    utilisateursList = Utilisateurs.GetAll();
-        //    return utilisateursList;
+        //    _env = env;
+        //    _upload = upload;
         //}
 
-        // GET: api/<UtilisateursController>/5
+
+        // GET: api/<UtilisateursController>
+        [HttpGet]
+        public IEnumerable<Utilisateurs> Get()
+        {
+
+            List<Utilisateurs> _utilisateursList = new();
+            _utilisateursList = Utilisateurs.GetAll();
+            return _utilisateursList;
+        }
+
+        //GET: api/<UtilisateursController>/5
         [HttpGet("{id}")]
         public Utilisateurs Get(int id)
         {
             Utilisateurs utilisateur = new();
-            utilisateur = utilisateur.Get(id).Item2;
+            utilisateur = Utilisateurs.Get(id);
             return utilisateur;
         }
 
-        // GET: UtilisateursController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: UtilisateursController/Create
+        // POST: api/<UtilisateursController>/
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Post([FromBody] Utilisateurs utilisateur)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            utilisateur.Add();
+            return Ok(new { message = "Utilisateur ajouté !", Utilisateur = utilisateur });
         }
 
-        // GET: UtilisateursController/Edit/5
-        public ActionResult Edit(int id)
+        // PUT api/<UtilisateursController>/5
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Utilisateurs utilisateur)
         {
-            return View();
+            Utilisateurs utilisateur2 = new Utilisateurs();
+            utilisateur2 = utilisateur;
+            utilisateur.Update();
+            return Ok(new { message = "Utilisateur Modifié", Utilisateur = utilisateur });
         }
 
-        // POST: UtilisateursController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // DELETE api/<UtilisateursController>/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Utilisateurs utilisateur = new();
+            utilisateur = Utilisateurs.Get(id);
+            utilisateur.Delete();
+            return Ok(new { message = "Utilisateur supprimé", Id = id });
         }
 
-        // GET: UtilisateursController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: UtilisateursController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

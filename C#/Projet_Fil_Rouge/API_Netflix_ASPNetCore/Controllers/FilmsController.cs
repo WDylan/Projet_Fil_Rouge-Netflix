@@ -1,4 +1,4 @@
-﻿//using API_Netflix_ASPNetCore.Interface;
+﻿using API_Netflix_ASPNetCore.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -20,19 +20,20 @@ namespace API_Netflix_ASPNetCore.Controllers
 
         // GET: api/<FilmsController>
         [HttpGet]
-        public IEnumerable <Films> Get()
+        public IEnumerable<Films> Get()
         {
-            List<Films> filmsList = new();
-            filmsList = Films.GetAll();
-            return filmsList;
+
+            List<Films> _filmsList = new();
+            _filmsList = Films.GetAll();
+            return _filmsList;
         }
 
-        // GET: api/<FilmsController>/5
+        //GET: api/<FilmsController>/5
         [HttpGet("{id}")]
         public Films Get(int id)
         {
             Films film = new();
-            film = film.Get(id).Item2;
+            film = Films.Get(id);
             return film;
         }
 
@@ -40,7 +41,7 @@ namespace API_Netflix_ASPNetCore.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Films film)
         {
-            //film.Add();
+            film.Add();
             return Ok(new { message = "Film ajouté !", Film = film });
         }
 
@@ -48,7 +49,9 @@ namespace API_Netflix_ASPNetCore.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Films film)
         {
-            film.IdFilm = id;
+            Films film2 = new Films();
+            film2 = film;
+            film.Update();
             return Ok(new { message = "Film Modifié", Film = film });
         }
 
@@ -56,8 +59,11 @@ namespace API_Netflix_ASPNetCore.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            Films film = new();
+            film = Films.Get(id);
+            film.Delete();
             return Ok(new { message = "Film supprimé", Id = id });
         }
-  
+
     }
 }
