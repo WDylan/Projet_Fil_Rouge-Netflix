@@ -1,5 +1,30 @@
 ﻿--DROP TABLE FILMS;
 --DROP TABLE SERIES;
+--DROP TABLE UTILISATEURS;
+
+
+--CREATE TABLE UTILISATEURS
+--(
+-- -------------- Création table UTILISATEURS --------------
+-- ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+-- NOM VARCHAR(50) NOT NULL,
+-- PRENOM varchar(50) NOT NULL,
+-- EMAIL VARCHAR(100) NOT NULL,
+-- MOTDEPASSE VARCHAR(100) NOT NULL,
+-- STATUT VARCHAR(50) NOT NULL
+--);
+
+
+--INSERT INTO [dbo].[UTILISATEURS] ([NOM],[PRENOM],[EMAIL],[MOTDEPASSE],[STATUT])
+--VALUES (N'White', N'Walter', N'walter.white@breakingbad.com', N'Skyler99', N'USER'),
+--(N'Mulder', N'Fox', N'fox.mulder@fbi.com', N'TrustNo1', N'USER'),
+--(N'Castle', N'Richard', N'richard.castle@gmail.com', N'NikkiHeat', N'USER'),
+--(N'Windsor', N'Charles', N'charles.windsor@hotmail.co.uk', N'AtLeast', N'USER'),
+--(N'Damiens', N'Francois', N'francois.damiens@embrouille.be', N'ForSure', N'USER'),
+--(N'Wikaryjak', N'Dylan', N'wikaryjak.dylan@gmail.com', N'OuiLaFlemme', N'ADMIN')
+
+
+
 
 
 --CREATE TABLE FILMS
