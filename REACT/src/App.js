@@ -4,25 +4,29 @@ import {
   BrowserRouter,
   Route,
   Routes,
+  Link,
+  Outlet
 } from 'react-router-dom';
 import HomeScreen from './Views/HomeScreen/HomeScreen';
 import LoginScreen from './Views/SignInView/LoginScreen'
+import SignUpScreen from './Views/SignUp/SignUpScreen';
 import { Home } from '@mui/icons-material';
-import FilmsList from './Views/HomeScreenListView/FilmsList';
-import SeriesList from './Views/HomeScreenListView/SeriesList';
-import Rooter from './config/Rooters/Routers';
 
 
 function App() {
-  const user = null;
-  //   { 
-  // name : "test",
-  //   };
   return (
+    <div>
     <div className='app'>
-<Rooter/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/Home" element={<HomeScreen />} />
+          <Route path="/Connexion" element={<SignUpScreen />} />
+          <Route path="/" exact  element={<LoginScreen />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+    </div>
+  )
 }
 
 export default App;

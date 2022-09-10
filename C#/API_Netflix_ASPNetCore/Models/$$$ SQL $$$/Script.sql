@@ -1,27 +1,27 @@
 ﻿--DROP TABLE FILMS;
---DROP TABLE SERIES;
-DROP TABLE UTILISATEURS;
+DROP TABLE SERIES;
+--DROP TABLE UTILISATEURS;
 
-CREATE TABLE UTILISATEURS
-(
- -------------- Création table UTILISATEURS --------------
- IDUTILISATEUR INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
- NOM VARCHAR(50) NOT NULL,
- PRENOM varchar(50) NOT NULL,
- EMAIL VARCHAR(100) NOT NULL,
- MOTDEPASSE VARCHAR(100) NOT NULL,
- STATUT VARCHAR(50) NOT NULL
-);
+--CREATE TABLE UTILISATEURS
+--(
+-- -------------- Création table UTILISATEURS --------------
+-- IDUTILISATEUR INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+-- NOM VARCHAR(50) NOT NULL,
+-- PRENOM varchar(50) NOT NULL,
+-- EMAIL VARCHAR(100) NOT NULL,
+-- MOTDEPASSE VARCHAR(100) NOT NULL,
+-- STATUT VARCHAR(50) NOT NULL
+--);
 
 
-INSERT INTO [dbo].[UTILISATEURS] ([NOM],[PRENOM],[EMAIL],[MOTDEPASSE],[STATUT])
-VALUES (N'White', N'Walter', N'walter.white@breakingbad.com', N'Skyler99', N'USER'),
-(N'Mulder', N'Fox', N'fox.mulder@fbi.com', N'TrustNo1', N'USER'),
-(N'Castle', N'Richard', N'richard.castle@gmail.com', N'NikkiHeat', N'USER'),
-(N'Windsor', N'Charles', N'charles.windsor@hotmail.co.uk', N'AtLeast', N'USER'),
-(N'Damiens', N'Francois', N'francois.damiens@embrouille.be', N'ForSure', N'USER'),
-(N'Papanikolaou', N'Thomas', N'thomas.papanikolaou@papanikolaou.com', N'Hallelujah', N'ADMIN'),
-(N'Wikaryjak', N'Dylan', N'wikaryjak.dylan@gmail.com', N'OuiLaFlemme', N'ADMIN')
+--INSERT INTO [dbo].[UTILISATEURS] ([NOM],[PRENOM],[EMAIL],[MOTDEPASSE],[STATUT])
+--VALUES (N'White', N'Walter', N'walter.white@breakingbad.com', N'Skyler99', N'USER'),
+--(N'Mulder', N'Fox', N'fox.mulder@fbi.com', N'TrustNo1', N'USER'),
+--(N'Castle', N'Richard', N'richard.castle@gmail.com', N'NikkiHeat', N'USER'),
+--(N'Windsor', N'Charles', N'charles.windsor@hotmail.co.uk', N'AtLeast', N'USER'),
+--(N'Damiens', N'Francois', N'francois.damiens@embrouille.be', N'ForSure', N'USER'),
+--(N'Papanikolaou', N'Thomas', N'thomas.papanikolaou@papanikolaou.com', N'Hallelujah', N'ADMIN'),
+--(N'Wikaryjak', N'Dylan', N'wikaryjak.dylan@gmail.com', N'OuiLaFlemme', N'ADMIN')
 
 
 --CREATE TABLE FILMS
@@ -67,36 +67,36 @@ VALUES (N'White', N'Walter', N'walter.white@breakingbad.com', N'Skyler99', N'USE
 
 
 
---CREATE TABLE SERIES
---(
--- -------------- Création table SERIES --------------
--- IDSERIE INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
--- TITRE VARCHAR(50) NOT NULL,
--- GENRE VARCHAR(50) NOT NULL,
--- NBEPISODES INT NOT NULL,
--- DATESORTIE DATETIME NOT NULL,
--- SYNOPSIS VARCHAR(250) NOT NULL,
--- ACTEUR_NOM VARCHAR(50) NOT NULL,
--- REALISATEUR_NOM VARCHAR(50) NOT NULL,
--- RECOMMANDATION INT NOT NULL,
--- IMAGE VARCHAR(255) NULL,
--- VIDEO VARCHAR(255) NULL,
---);
+CREATE TABLE SERIES
+(
+ -------------- Création table SERIES --------------
+ IDSERIE INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+ TITRE VARCHAR(50) NOT NULL,
+ GENRE VARCHAR(50) NOT NULL,
+ NBEPISODES INT NOT NULL,
+ DATESORTIE DATETIME NOT NULL,
+ SYNOPSIS VARCHAR(250) NOT NULL,
+ ACTEUR_NOM VARCHAR(50) NOT NULL,
+ REALISATEUR_NOM VARCHAR(50) NOT NULL,
+ RECOMMANDATION INT NOT NULL,
+ IMAGE VARCHAR(255) NULL,
+ VIDEO VARCHAR(255) NULL,
+);
 
---INSERT INTO [dbo].[SERIES] ([TITRE],[GENRE], [NBEPISODES], [DATESORTIE], [SYNOPSIS], [ACTEUR_NOM], [REALISATEUR_NOM], [RECOMMANDATION], [IMAGE], [VIDEO])
---VALUES (N'The X-Files','test', 218, 1993-09-10, N'Les agents spéciaux Fox Mulder et Dana Scully travaillent sur des dossiers non classés, des affaires non résolues impliquant des phénomènes paranormaux.', N'David Duchovny, Gillian Anderson', N'Chris Carter', 100, N'img/X_Files.jpg',''),
---(N'Breaking Bad','test', 62, 2008-01-20, N'Walter White, 50 ans, est professeur de chimie. Lorsqu''il apprend qu''il est atteint d''un incurable cancer des poumons, il ne voit plus qu''une solution : mettre ses connaissances en chimie à profit pour fabriquer et vendre de la méthamphétamine.', N'Bryan Cranston', N'Vince Gilligan', 98, N'img/Breaking_Bad.jpg', ''),
---(N'Better Call Saul','test', 63, 2015-02-08, N'Six ans avant de croiser le chemin de Walter White, Saul Goodman est un avocat qui peine à joindre les deux bouts. Pour boucler ses fins de mois, il n''aura d''autres choix que se livrer à quelques petites escroqueries.', N'Bob Odenkirk', N'Vince Gilligan', 100, N'img/Better_Call_Saul.jpg', ''),
---(N'The Bridge, Bron, Broen','test', 38, 2011-09-21, N'Une femme est retrouvée coupée en deux sur le pont de l''Øresund, à la frontière entre le Danemark et la Suède, et force les deux pays à collaborer. La policière Saga Noren s''occupe de cette affaire.', N'Sofia Helin', N'Henrik Georgsson', 100, N'img/The_Bridge_Bron.jpg', ''),
---(N'The Shield','test', 88, 2003-11-23, N'Vic Mackey dirige un groupe de flics très efficace dans la lutte contre le crime. Son abnégation l''oblige souvent à franchir la ligne de la légalité.', N'Michael Chiklis', N'Shawn Ryan', 95, N'img/The_Shield.jpg', ''),
---(N'The Office (US)','test', 201, 2005-03-24, N'Le quotidien des employés de bureau d''une société de vente de papier en Pennsylvanie, Dunder Mifflin, et de leur fantasque responsable, Michael Scott.', N'Steve Carell', N'Greg Daniels', 90, N'img/The_Office.jpg', ''),
---(N'Game of Thrones','test', 73, 20111-06-05, N'Sur le continent de Westeros en proie au retour de l''Hiver, les grands Seigneurs et la fille du roi déchu se disputent le Trône de Fer.', N'Emilia Clarke', N'David Benioff', 50, N'img/Game_of_Thrones.jpg', ''),
---(N'Arcane','test', 9, 2021-11-07, N'Dans un Piltover utopique, et dans les souterrains opprimés de Zaun, l''histoire d''Arcane revient sur les origines de deux champions emblématiques du jeu… et sur la force qui va les séparer.', N'Hailee Seinfled', N'Studio Fortiche', 96, N'img/Arcane.jpg', ''),
---(N'Twin Peaks','test', 48, 1991-04-15, N'Un meurtre a été commis à Twin Peaks, une petite bourgade en apparence tranquille. La jeune Laura Palmer est retrouvée morte nue au bord d''un lac.', N'Kyle MacLachlan', N'David Lynch', 100, N'img/Twin_Peaks.jpg', ''),
---(N'The Sopranos','test', 86, 1999-09-05, N'Après une crise de panique, Tony Soprano, leader de la mafia du New Jersey, se retrouve forcé de consulter une psychiatre.', N'James Gandolfini', N'David Chase', 100, N'img/The_Sopranos.jpg', ''),
---(N'The Wire','test', 60, 2004-01-08, N'À Baltimore, le trafic de drogue est omniprésent. Une unité spéciale est mise en place pour démanteler le réseau de deux caïds de l''ouest de la ville.', N'Idriss Elba', N'David Simon', 80, N'img/The_Wire.jpg', ''),
---(N'Dexter','test', 96, 2007-05-17, N'Spécialiste en hématologie le jour, Dexter se transforme la nuit venue en un tueur sanguinaire, froid, méticuleux et imperturbable.', N'Michael C. Hall, Jennifer Carpenter', N'', 99, N'img/Dexter.jpg', ''),
---(N'Urgences','test', 331, 1994-09-19, N'A Chicago, médecins, infirmières, standardistes et compagnie s''activent pour faire vivre les urgences du Cook County General Hospital.', N'Anthony Edwards, George Clooney', N'Michael Crichton', 80, N'img/Urgences.jpg', ''),
---(N'24','test', 331, 2001-11-06, N'Agent fédéral et responsable de la Cellule Anti-Terroriste de Los Angeles, Jack Bauer a 24 heures pour mener à bien sa mission et empêcher que des terroristes ne mettent leur plan à exécution...', N'Kiefer Sutherland, Elisha Cuthbert', N'Jon Cassar', 99, N'img/24.jpg', '')
+INSERT INTO [dbo].[SERIES] ([TITRE],[GENRE], [NBEPISODES], [DATESORTIE], [SYNOPSIS], [ACTEUR_NOM], [REALISATEUR_NOM], [RECOMMANDATION], [IMAGE], [VIDEO])
+VALUES (N'The X-Files','test', 218, 1993-09-10, N'Les agents spéciaux Fox Mulder et Dana Scully travaillent sur des dossiers non classés, des affaires non résolues impliquant des phénomènes paranormaux.', N'David Duchovny, Gillian Anderson', N'Chris Carter', 100, N'img/X_Files.jpg',''),
+(N'Breaking Bad','test', 62, 2008-01-20, N'Walter White, 50 ans, est professeur de chimie. Lorsqu''il apprend qu''il est atteint d''un incurable cancer des poumons, il ne voit plus qu''une solution : mettre ses connaissances en chimie à profit pour fabriquer et vendre de la méthamphétamine.', N'Bryan Cranston', N'Vince Gilligan', 98, N'img/Breaking_Bad.jpg', ''),
+(N'Better Call Saul','test', 63, 2015-02-08, N'Six ans avant de croiser le chemin de Walter White, Saul Goodman est un avocat qui peine à joindre les deux bouts. Pour boucler ses fins de mois, il n''aura d''autres choix que se livrer à quelques petites escroqueries.', N'Bob Odenkirk', N'Vince Gilligan', 100, N'img/Better_Call_Saul.jpg', ''),
+(N'The Bridge, Bron, Broen','test', 38, 2011-09-21, N'Une femme est retrouvée coupée en deux sur le pont de l''Øresund, à la frontière entre le Danemark et la Suède, et force les deux pays à collaborer. La policière Saga Noren s''occupe de cette affaire.', N'Sofia Helin', N'Henrik Georgsson', 100, N'img/The_Bridge_Bron.jpg', ''),
+(N'The Shield','test', 88, 2003-11-23, N'Vic Mackey dirige un groupe de flics très efficace dans la lutte contre le crime. Son abnégation l''oblige souvent à franchir la ligne de la légalité.', N'Michael Chiklis', N'Shawn Ryan', 95, N'img/The_Shield.jpg', ''),
+(N'The Office (US)','test', 201, 2005-03-24, N'Le quotidien des employés de bureau d''une société de vente de papier en Pennsylvanie, Dunder Mifflin, et de leur fantasque responsable, Michael Scott.', N'Steve Carell', N'Greg Daniels', 90, N'img/The_Office.jpg', ''),
+(N'Game of Thrones','test', 73, 20111-06-05, N'Sur le continent de Westeros en proie au retour de l''Hiver, les grands Seigneurs et la fille du roi déchu se disputent le Trône de Fer.', N'Emilia Clarke', N'David Benioff', 50, N'img/Game_of_Thrones.jpg', ''),
+(N'Arcane','test', 9, 2021-11-07, N'Dans un Piltover utopique, et dans les souterrains opprimés de Zaun, l''histoire d''Arcane revient sur les origines de deux champions emblématiques du jeu… et sur la force qui va les séparer.', N'Hailee Seinfled', N'Studio Fortiche', 96, N'img/Arcane.jpg', ''),
+(N'Twin Peaks','test', 48, 1991-04-15, N'Un meurtre a été commis à Twin Peaks, une petite bourgade en apparence tranquille. La jeune Laura Palmer est retrouvée morte nue au bord d''un lac.', N'Kyle MacLachlan', N'David Lynch', 100, N'img/Twin_Peaks.jpg', ''),
+(N'The Sopranos','test', 86, 1999-09-05, N'Après une crise de panique, Tony Soprano, leader de la mafia du New Jersey, se retrouve forcé de consulter une psychiatre.', N'James Gandolfini', N'David Chase', 100, N'img/The_Sopranos.jpg', ''),
+(N'The Wire','test', 60, 2004-01-08, N'À Baltimore, le trafic de drogue est omniprésent. Une unité spéciale est mise en place pour démanteler le réseau de deux caïds de l''ouest de la ville.', N'Idriss Elba', N'David Simon', 80, N'img/The_Wire.jpg', ''),
+(N'Dexter','test', 96, 2007-05-17, N'Spécialiste en hématologie le jour, Dexter se transforme la nuit venue en un tueur sanguinaire, froid, méticuleux et imperturbable.', N'Michael C. Hall, Jennifer Carpenter', N'', 99, N'img/Dexter.jpg', ''),
+(N'Urgences','test', 331, 1994-09-19, N'A Chicago, médecins, infirmières, standardistes et compagnie s''activent pour faire vivre les urgences du Cook County General Hospital.', N'Anthony Edwards, George Clooney', N'Michael Crichton', 80, N'img/Urgences.jpg', ''),
+(N'24','test', 331, 2001-11-06, N'Agent fédéral et responsable de la Cellule Anti-Terroriste de Los Angeles, Jack Bauer a 24 heures pour mener à bien sa mission et empêcher que des terroristes ne mettent leur plan à exécution...', N'Kiefer Sutherland, Elisha Cuthbert', N'Jon Cassar', 99, N'img/24.jpg', '')
 
 

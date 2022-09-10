@@ -8,7 +8,7 @@ function LoginScreen() {
     return (
         <div className='loginScreen'>
             <div className="loginScreen_background">
-                <a href=<HomeScreen/>>
+                <a href={<HomeScreen/>}>
                     <img className='loginScreen_logo'
                         src='./img/logo.png'/>
                 </a>
