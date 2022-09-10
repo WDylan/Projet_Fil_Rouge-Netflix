@@ -48,7 +48,7 @@ namespace API_Netflix_ASPNetCore.Controllers
         public IActionResult Put(int id, [FromBody] Series serie)
         {
             Series serie2 = new Series();
-            serie = serie;
+            serie2 = serie;
             serie.Update();
             return Ok(new { message = "Série Modifiée", Serie = serie });
         }
