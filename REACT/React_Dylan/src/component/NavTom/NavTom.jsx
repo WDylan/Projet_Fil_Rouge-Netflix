@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
-import "./Style/Nav-Main.scss";
+import '../NavTom/NavTom.scss'
 
 
 
-function Nav() {
+function NavTom() {
 
     const [navBlack, setNavBlack] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -27,7 +27,7 @@ function Nav() {
     return (
         <div className={`nav ${navBlack || toggleMenu ? "nav-black" : "nav-transparent"} ${toggleMenu && "show"}`}>
 
-            <img src="./images/logo.png" className='nav_logo' alt="Netflix" />
+            <img src="/img/logo.png" className='nav_logo' alt="Netflix" />
 
             <div className="nav_actions">
                 <a href="/" className="nav_action">
@@ -38,4 +38,4 @@ function Nav() {
     )
 }
 
-export default Nav
+export default NavTom

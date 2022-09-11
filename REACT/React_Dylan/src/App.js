@@ -9,7 +9,6 @@ import HomeScreen from './Views/HomeScreen/HomeScreen';
 import LoginScreen from './Views/SignInView/LoginScreen'
 import SignUpFormScreen from './Views/SignUpForm/SignUpFormScreen'
 import SignUpScreen from './Views/SignUp/SignUpScreen'
-import { Home } from '@mui/icons-material';
 import FAQ from './Views/FAQ/FAQ';
 // import Login from './Views/SignInView/SignIn';
 

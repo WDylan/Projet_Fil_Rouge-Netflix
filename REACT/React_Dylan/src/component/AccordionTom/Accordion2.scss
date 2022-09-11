@@ -1,29 +1,21 @@
-// .accordions {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   width: 100%;
-//   margin-top: 28px;
-//   color: fuchsia;
-// }
 
 .accordions {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: center;
-  color: white;  
-  width: 63%;
-  margin-left: 285px;
+  height: 100%;
+  width: 60%;
+  color: white;
+  margin-left: 355px;
   margin-top: 30px;
   margin-bottom: -4px;
 }
 
+
 .accordion_title {
   color: white;
-  position: relative;
   background: rgb(56, 55, 55);
-  padding: 1rem;
+  padding: 2rem;
   font-weight: bold;
   margin-bottom: -19px;
 }
@@ -34,13 +26,13 @@
 }
 
 .accordion_icon {
-  position: static;
-  margin-top: -25px;  
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -25px;
   background: rgb(56, 55, 55);
-  margin-left: 380px;
+  // margin-left: 480px;
   margin-bottom: 5px;
 }
-
 
 .accordion_body {
   display: flex;
@@ -59,6 +51,7 @@
     sans-serif;
   font-size: 23px;
 }
+
 
 
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
-import "./Accordion2.scss";
+import "./Accordion.scss";
+import { Fragment } from 'react';
 
 const str1 = "Netflix est un service de streaming qui propose une vaste sélection de séries,films, animes, documentaires et autres programmes primés sur des milliers d'appareils connectés à Internet.\n\n Regardez tout ce que vous voulez, quand vous voulez, sans publicité et à un tarif mensuel très attractif. Découvrez de nouveaux films et séries chaque semaine, il y en a pour tous les goûts !";
 

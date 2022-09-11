@@ -1,4 +1,6 @@
 .footer {
+    display: flex;
+    justify-content: space-evenly;
     color: grey;
     padding: 2rem 1rem;
     font-size: 0.8rem;
@@ -50,7 +52,3 @@
 
 }
 
-.separation{
-    background-color: rgb(56, 55, 55);
-    height: 5px;
-}

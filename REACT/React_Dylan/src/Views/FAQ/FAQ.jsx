@@ -1,11 +1,10 @@
 import React from 'react'
-import Footer from '../../component/Footer'
-import Accordion from '../../component/Accordion/Accordion2'
-import Nav from '../../component/Nav'
-
-
-
-
+import Footer2 from '../../component/Footer2'
+import Accordion from '../../component/AccordionTom/Accordion2'
+import NavTom from '../../component/NavTom/NavTom'
+import BannerTom from '../../component/BannerTom/BannerTom'
+import '../FAQ/FAQ.scss'
+import { Fragment } from 'react'
 
 
 
@@ -37,10 +36,12 @@ function FAQ() {
       ? [<br key={`br-${index}`} />, <Fragment key={index}>{line}</Fragment>]
       : [line]
   );
-  
+
   return (
     <div className="FAQ">
-      <Nav />
+      <NavTom />
+      <BannerTom />
+      <div className='separation1'> </div>
       <div className='FAQ_title'>Foire aux questions</div>
       <div className='accordions'>
         <Accordion
@@ -71,6 +72,8 @@ function FAQ() {
           title="Est-ce que Netflix est adapté aux enfants ?"
           content={withBreaks6} />
       </div>
+      <div className='separation2'> </div>      
+      <Footer2 />
 
     </div>
 
