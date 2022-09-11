@@ -1,10 +1,8 @@
 import React from 'react'
-import { useState } from 'react';
-import '../NavTom/NavTom.scss'
+import { useState } from 'react'
+import '../NavFAQ/NavFAQ.scss'
 
-
-
-function NavTom() {
+function NavFAQ() {
 
     const [navBlack, setNavBlack] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -22,20 +20,18 @@ function NavTom() {
         toggleMenu ? setToggleMenu(false) : setToggleMenu(true);
     }
 
-
-
     return (
-        <div className={`nav1 ${navBlack || toggleMenu ? "nav-black" : "nav-transparent"} ${toggleMenu && "show"}`}>
-
+        <div className={`nav ${navBlack || toggleMenu ? "nav-black" : "nav-transparent"} ${toggleMenu && "show"}`}>
             <img src="/img/logo.png" className='nav_logo' alt="Netflix" />
 
             <div className="nav_actions">
-                <a href="/" className="nav_action">
-                    <button className='btn' onClick={handleClick}>S'identifier</button>
+                <a href="/" classname="nav_action">
+                    <button className="btn" onClick={handleClick}>S'identifier</button>
                 </a>
             </div>
+
         </div>
     )
 }
 
-export default NavTom
+export default NavFAQ

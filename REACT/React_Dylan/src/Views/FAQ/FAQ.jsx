@@ -1,11 +1,9 @@
 import React from 'react'
 import Footer2 from '../../component/Footer2'
 import Accordion from '../../component/AccordionTom/Accordion2'
-import NavTom from '../../component/NavTom/NavTom'
-import BannerTom from '../../component/BannerTom/BannerTom'
-import '../FAQ/FAQ.scss'
+import NavFAQ from '../../component/NavFAQ/NavFAQ'
 import { Fragment } from 'react'
-
+import FAQBan from '../../component/FAQBan/FAQBan'
 
 
 function FAQ() {
@@ -39,10 +37,10 @@ function FAQ() {
 
   return (
     <div className="FAQ">
-      <NavTom />
-      <BannerTom />
+      <NavFAQ />
+      <FAQBan />
       <div className='separation1'> </div>
-      <div className='FAQ_title'>Foire aux questions</div>
+      {/* <h1 className='title_FAQ'>Foire aux questions</h1> */}
       <div className='accordions'>
         <Accordion
           title="Netflix, qu'est-ce que c'est ?"
@@ -72,7 +70,7 @@ function FAQ() {
           title="Est-ce que Netflix est adapté aux enfants ?"
           content={withBreaks6} />
       </div>
-      <div className='separation2'> </div>      
+      <div className='separation2'> </div>
       <Footer2 />
 
     </div>

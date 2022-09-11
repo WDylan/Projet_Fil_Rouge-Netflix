@@ -6,11 +6,10 @@ import {
   Routes,
 } from 'react-router-dom';
 import HomeScreen from './Views/HomeScreen/HomeScreen';
-import LoginScreen from './Views/SignInView/LoginScreen'
-import SignUpFormScreen from './Views/SignUpForm/SignUpFormScreen'
+import SignUpForm from './Views/SignUpForm/SignUpForm';
 import SignUpScreen from './Views/SignUp/SignUpScreen'
 import FAQ from './Views/FAQ/FAQ';
-// import Login from './Views/SignInView/SignIn';
+import TestFAQ from './Views/TestFAQ/TestFAQ';
 
 function App() {
   const user = null;
@@ -21,8 +20,8 @@ function App() {
         <Routes>
           <Route path="/Home" element={<HomeScreen />} />
           <Route path="/Connexion" element={<SignUpScreen />} />
-          <Route path="/Formulaire" element={<SignUpFormScreen />} />
-          <Route path="/" element={<FAQ />} />
+          <Route path="/Formulaire" element={<SignUpForm />} />
+          <Route path="/" element={<TestFAQ />} />
         </Routes>
       </BrowserRouter>
     </div>

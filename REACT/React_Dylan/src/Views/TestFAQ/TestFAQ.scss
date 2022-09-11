@@ -1,0 +1,32 @@
+.FAQ_title {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    color: white;
+    font-size: 65px;
+    margin-top: 35px;
+    margin-bottom: -15px;
+    font-family: 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    font-weight: bolder;
+}
+
+.accordions {
+    display: flex;
+    justify-content: flex-start;
+    height: 1500px;
+    margin-bottom: 350px;
+
+}
+
+.separation1 {
+    height: 5px;
+    background-color: grey;
+}
+
+.separation2 {
+    height: 5px;
+    background-color: grey;
+    margin-top: 65px;
+}

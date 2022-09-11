@@ -1,11 +1,11 @@
 import "./SignUpScreen.scss"
 import React from "react";
-import SignUpFormScreen from "../SignUpForm/SignUpFormScreen";
+import SignUpForm from "../SignUpForm/SignUpForm";
 
 function SignUpScreen() {
 
     const register = (e) => {
-        e.SignUpScreen();
+        e.SignUpForm();
     };
 
     const signIn = (e) => {
@@ -20,7 +20,7 @@ function SignUpScreen() {
             <button type="submit" onClick={signIn}>S'identifier</button>
 
             <h4>
-                <span className="signupScreen_grisatre" onClick={SignUpFormScreen}>Première visite sur Netflix ? </span>
+                <span className="signupScreen_grisatre" onClick={SignUpForm}>Première visite sur Netflix ? </span>
                  <span className="signupScreen_lien" onClick={register}>Inscrivez-vous.</span>
             </h4>
         </form>

@@ -1,10 +1,10 @@
 import React from 'react';
-import "../../component/BannerTom/BannerTom.scss";
+import '../../component/BannerTom/BannerTom.scss'
 
 function Banner() {
 
     const bannerStyle = {
-        backgroundImage: `url("/img/FR-fr-20220620-popsignuptwoweeks-perspective_alpha_website_largeDARK.jpg")`,
+        backgroundImage: `url("img/FR-fr-20220620-popsignuptwoweeks-perspective_alpha_website_largeDARK.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
     }

@@ -1,4 +1,3 @@
-
 .accordions {
   display: flex;
   flex-direction: column;
@@ -36,6 +35,7 @@
 
 .accordion_body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background: rgb(56, 55, 55);
   padding: 1rem;
