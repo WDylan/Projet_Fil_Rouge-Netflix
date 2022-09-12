@@ -9,9 +9,19 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {
     Link
 } from 'react-router-dom';
+import { useNavigate } from 'react-router'
 
 
 function Nav() {
+
+    const navigate = useNavigate();
+
+    const navigateToFAQ = () => {
+        navigate('/');
+    }
+
+
+
     const [navBlack, setNavBlack] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
     const transitionNav = () => {
@@ -34,7 +44,7 @@ function Nav() {
             <button className='nav__burger' onClick={handleClick}>
                 <MenuIcon />
             </button>
-            <img src='./img/logo.png' className='nav__logo' alt='Netflix' />
+            <img src='./img/logo.png' className='nav__logo' alt='Netflix' onClick={navigateToFAQ}/>
             <nav className="nav__links">
                 <a href='/' className='nav__link'>
                     Accueil

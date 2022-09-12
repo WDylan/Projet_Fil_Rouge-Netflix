@@ -1,6 +1,6 @@
 import React from 'react'
 import BannerForm from '../../component/BannerForm/BannerForm'
-import Footer from '../../component/Footer2'
+import Footer from '../../component/Footer'
 import NavForm from '../../component/NavForm/NavForm'
 import '../SignUpForm/SignUpForm.scss'
 

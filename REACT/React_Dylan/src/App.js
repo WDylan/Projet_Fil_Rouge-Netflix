@@ -19,7 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/Home" element={<HomeScreen />} />
-          <Route path="/Connexion" element={<SignUpScreen />} />
+          <Route path="/Connexion" element={<SignUpScreen />} />          
           <Route path="/Formulaire" element={<SignUpForm />} />
           <Route path="/" element={<TestFAQ />} />
         </Routes>
