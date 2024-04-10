@@ -1,37 +1,52 @@
-.accordions{
-
+.accordions {
     display: flex;
-
     flex-direction: column;
-
+    flex-wrap: nowrap;
     justify-content: center;
-
-    height: 100%;
-
-    width: 60%;
-
     color: white;
-
-    margin-left: 305px;
-
+    width: 63%;
+    margin-left: 285px;
     margin-top: 30px;
-
     margin-bottom: -4px;
+}
 
+.accordion_title {
+    color: white;
+    position: relative;
+    background: rgb(56, 55, 55);
+    padding: 1rem;
+    font-weight: bold;
+    margin-bottom: -19px;
+}
+
+.accordion_title:hover,
+.active .accordion_title {
+    cursor: pointer;
+}
+
+.accordion_icon {
+    position: static;
+    margin-top: -25px;
+    background: rgb(56, 55, 55);
+    margin-left: 380px;
+    margin-bottom: 5px;
 }
 
 
-
-.accordion_title{
-
-
-
+.accordion_body {
+    display: flex;
+    justify-content: center;
+    background: rgb(56, 55, 55);
+    padding: 1rem;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    font-weight: normal;
+    font-size: larger;
 }
 
-
-
-.FAQParent{
-
-    height:50%;
-
+.title_style {
+    font-family: 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    font-size: 23px;
 }

@@ -16,11 +16,11 @@
     &_grisatre {
         color: gray;
     }
-    
-    &_lien:hover{
+
+    &_lien:hover {
         cursor: pointer;
         text-decoration: underline;
-           }
+    }
 
     & form>h4 {
         text-align: left;
@@ -38,10 +38,28 @@
         margin-bottom: 14px;
         border-radius: 5px;
         border: none;
-        padding: 5px 15px;
+        padding: 5px 15px
     }
 
-    & form>button {
+    &_souvenir {
+        color: #333;
+        background-color: #333;
+    }
+
+    &_labelsouvenir {
+        color: gray;
+        margin-right: 50%;
+    }
+
+    &_placeholder {
+        background-color: #333;
+        color: #8c8c8c;
+        font-size: 14px;
+        align-items: center;
+    }
+
+    .signupScreen_button {
+
         padding: 16px 20px;
         font-size: 1rem;
         color: #fff;
@@ -52,17 +70,11 @@
         cursor: pointer;
         margin-top: 20px;
         margin-bottom: 20px;
+
     }
 
-    &_souvenir {
-        color: black;
-    }
+}
 
-    &_labelsouvenir
-    {
-        color:  gray;
-        margin-right: 50%
-        ;
-    }
-
+p {
+    padding-left: 20px;
 }

@@ -1,9 +1,11 @@
 import React from 'react'
+import '../TestFAQ/TestFAQ.scss'
 import { Fragment } from 'react';
 import BannerTest from '../../component/BannerTest';
 import AccordionFAQ from '../../component/AccordionFAQ';
 import NavFAQ from '../../component/NavFAQ';
 import Footer from '../../component/Footer';
+import Loginscreen from '../LoginScreen/LoginScreen'
 
 const str1 = "Netflix est un service de streaming qui propose une vaste sélection de séries,films, animes, documentaires et autres programmes primés sur des milliers d'appareils connectés à Internet.\n\n Regardez tout ce que vous voulez, quand vous voulez, sans publicité et à un tarif mensuel très attractif. Découvrez de nouveaux films et séries chaque semaine, il y en a pour tous les goûts !";
 
@@ -35,8 +37,7 @@ function TestFAQ() {
 
     return (
         <div>
-            <NavFAQ />
-            <BannerTest />
+            <Loginscreen />
             <div className='separation1'> </div>
             <div className='FAQ_title'>Foire aux questions
 
