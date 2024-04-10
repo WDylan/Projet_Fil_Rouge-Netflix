@@ -1,0 +1,43 @@
+.navForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    font-size: 0.9rem;
+
+    &Logo {
+        max-width: 180px;
+        margin: 2%;
+    }
+
+    &Actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 5;
+
+        .navFormAction {
+            margin-left: 10px;
+
+            @media screen and (min-width:768px) {
+                margin-left: 20px;
+            }
+        }
+
+        .navFormBtn {
+            background-color: white;
+            color: rgb(50, 49, 49);
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 0.4rem 1.3rem;
+            border-radius: 5%;
+            width: 210px;
+            margin-left: -100px;
+
+        }
+
+    }
+}

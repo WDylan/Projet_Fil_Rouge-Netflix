@@ -1,0 +1,79 @@
+.banner_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 1500px;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: white;
+   
+
+    @media screen and (min-width: 768px) {
+        font-size: 1.2rem;
+        height: 80vh;
+        padding-bottom: 7rem;
+    }
+
+    .firstname {
+        width: 50%;
+        padding: 18.5px;
+        border-radius: 2%;
+        margin-top: 26px;
+    }
+
+    .lastname {
+        width: 50%;
+        padding: 18.5px;
+        border-radius: 2%;
+        margin-top: 26px;
+    }
+
+    .email {
+        width: 50%;
+        padding: 18.5px;
+        border-radius: 2%;
+        margin-top: 26px;
+    }
+
+    .password {
+        width: 50%;
+        padding: 18.5px;
+        border-radius: 2%;
+        margin-top: 26px;
+    }
+
+    .valider_inscription {
+        background-color: red;
+        color: white;
+        font-size: large;
+        padding: 15.5px;
+        border-radius: 3%;
+        width: 250px;
+        margin-left: 900px;
+        margin-top: 20px;
+    }
+
+    
+}
+
+
+.banner_title {
+    margin-top: -50px;
+    @media screen and (min-width: 768px) {
+        margin-top: 10px;
+        font-size: 1.9rem;
+        height: 80vh;
+        padding-bottom: 3rem;
+    }
+}
+
+._span_1 {
+    font-size: 1.7rem;
+}
+
+._span_2 {
+    font-size: 1.6rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+

@@ -1,0 +1,101 @@
+.SignUpForm {
+    position: relative;
+    height: 100%;
+    background-color: white;
+}
+
+.separation1{
+    background-color: rgb(56, 55, 55);
+    height: 5px;
+    margin-bottom: 5rem;
+  }
+  
+  .separation2{
+    background-color: rgb(56, 55, 55);
+    height: 5px;
+    margin-top: 10rem;
+  }
+
+.FormBody{
+    position: relative;
+    height: 100%;
+
+    &_gradient {
+        width: 100%;
+        z-index: 1;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    &_body {
+        position: absolute;
+        top: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        z-index: 1;
+        color: #fff;
+        padding: 20px;
+        left: 0;
+        right: 0;
+    }
+
+    &_body>h1 {
+        font-size: 3.125rem;
+        margin-bottom: 20px;
+    }
+
+    &_body>h2 {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+
+    &_body>h3 {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    &_button {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: white;
+        background-color: grey;
+        border: none;
+        cursor: pointer;
+    }
+
+    &_logo {
+        position: fixed;
+        width: 130px;
+        margin: 2rem;
+        object-fit: contain;
+        padding-left: 20px;
+    }
+
+    &_input>form>input {
+        padding: 10px;
+        outline-width: 0;
+        height: 48px;
+        width: 30%;
+        border: none;
+        max-width: 600px;
+    }
+
+    &_input {
+        margin: 20px;
+    }
+    &_Commencer {
+        padding: 17px 20px;
+        font-size: 1rem;
+        color: white;
+        background-color: #e50914;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
