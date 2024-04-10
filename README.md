@@ -1,4 +1,4 @@
-# Projet_Fil_Rouge Netflix
+﻿# Projet_Fil_Rouge Netflix
 
 Ce projet fil rouge a été réalisé lors de ma formation .Net FullStack chez M2I formation.
 
@@ -16,11 +16,12 @@ Il regroupe les langages et technologies suivantes :
 
 
 # Dépendances 
-Node
+• Node
 
 # Lancer le projet 
-Clôner le repos
+• Clôner le repos
 
 # Back-End
-Ouvrir le fichier 
+• Ouvrir le fichier 
+
 # Front-End
