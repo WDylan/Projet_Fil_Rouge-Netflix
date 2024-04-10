@@ -13,3 +13,14 @@ Il regroupe les langages et technologies suivantes :
       - C#
       - Sql
       - Asp.net Core
+
+
+# Dépendances 
+Node
+
+# Lancer le projet 
+Clôner le repos
+
+# Back-End
+Ouvrir le fichier 
+# Front-End
