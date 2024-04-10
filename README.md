@@ -40,8 +40,8 @@ Il regroupe les langages et technologies suivantes :
 
 • Installer les dépendances
 
-                                npm install
+                npm install
 
 • Démarrer le projet
 
-                                npm start
+                npm start
