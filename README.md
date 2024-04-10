@@ -1,21 +1,21 @@
 ﻿# Projet_Fil_Rouge
 Ceci est le projet fil rouge réalisé lors de ma formation .Net FullStack chez M2I Formation.
 Il regroupe les langages et technologies suivantes : 
-• Html
+        • Html
 
-• Css(Sass)
+        • Css(Sass)
 
-• Javascript
+        • Javascript
 
-• React
+        • React
 
-• NodeJs
+        • NodeJs
 
-• C#
+        • C#
 
-• SQL
+        • SQL
 
-• Asp.net Core
+        • Asp.net Core
 
 
 # Dépendances
