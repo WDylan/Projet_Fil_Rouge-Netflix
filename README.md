@@ -18,7 +18,9 @@ Il regroupe les langages et technologies suivantes :
 
 # Back-end 
 • Ouvrir le fichier « Backend/API_Netflix_ASPNetCore.csproj » dans Visual Studio
+
 • Créer les tables SQL à partir des fichier « Script.sql » du dossier « Models/$$$ SQL $$$ »
+
 • Démarrer le projet
 
 # Front-end
